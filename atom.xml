@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-02-13T09:15:08.992Z</updated>
+  <updated>2023-02-13T10:58:59.448Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo workflow</title>
+    <link href="http://example.com/2023/02/13/hexo-workflow/"/>
+    <id>http://example.com/2023/02/13/hexo-workflow/</id>
+    <published>2023-02-13T12:29:51.000Z</published>
+    <updated>2023-02-13T10:58:59.448Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="hexo-写博客基本流程"><a class="markdownIt-Anchor" href="#hexo-写博客基本流程"></a> hexo 写博客基本流程</h1><pre class="highlight"><code class="bash"><span class="hljs-built_in">cd</span> ~/bloghexo new <span class="hljs-string">"article name"</span><span class="hljs-comment"># 打开桌面post文件夹的快捷方式</span><span class="hljs-comment"># 用typora编辑新建好的md文件</span><span class="hljs-comment"># 添加tags</span><span class="hljs-comment"># 选择categories: tech-article or freetime</span><span class="hljs-comment"># 原来写好的只能新建后复制内容</span>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d<span class="hljs-comment"># 可以alias成一条命令 fabu</span><span class="hljs-comment"># 删除直接删文件</span></code></pre><h1 id="发布前的处理"><a class="markdownIt-Anchor" href="#发布前的处理"></a> 发布前的处理</h1><p>鉴于 hexo 各个渲染器的不完备，即使选择相对较好的 pandoc，也要在发布前预处理。</p><ol><li><p>图片去除相对路径和中括号里的图注，只留下小括号里文件名。<s>这样会在 typora 本地看不到图片。</s></p><blockquote><p>用 obsidian+custom attachment location 插件完美解决</p></blockquote></li><li><p>多行公式分块，行内公式不能有空格。</p></li></ol><h1 id="主力换-win11-后的更新"><a class="markdownIt-Anchor" href="#主力换-win11-后的更新"></a> 主力换 win11 后的更新</h1><p>换主题 <a href="https://github.com/Haojen/hexo-theme-Claudia/blob/master/README-CN.md">hexo-theme-Claudia/README-CN.md at master · Haojen/hexo-theme-Claudia · GitHub</a><br>按其主页要求安装 npm 包。<br>由于 npm 迭代很快，很多包安装时就报错。解决方案：用新出的替代包，向下兼容</p><pre class="highlight"><code class="shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">必要</span>npm install hexo-renderer-pugnpm install hexo-renderer-dartsassnpm install hexo-generator-search<span class="hljs-meta prompt_">#</span><span class="language-bash">选择性安装</span><span class="hljs-meta prompt_"># </span><span class="language-bash">如果需要添加订阅功能</span>npm install hexo-generator-feed<span class="hljs-meta prompt_"># </span><span class="language-bash">流程图功能</span>npm install hexo-filter-flowchart --save<span class="hljs-meta prompt_"># </span><span class="language-bash">Emoji</span>npm install hexo-filter-github-emojis --save<span class="hljs-meta prompt_"># </span><span class="language-bash">搜索功能</span>npm install hexo-generator-search --save<span class="hljs-meta prompt_"># </span><span class="language-bash">渲染器 数学公式</span>npm install hexo-renderer-markdown-it-plus --savenpm install hexo-math --savenpm install hexo-asset-img --save</code></pre><h2 id="公式支持mathjax-换为-katex"><a class="markdownIt-Anchor" href="#公式支持mathjax-换为-katex"></a> 公式支持：mathjax 换为 KaTex</h2><p>katex 渲染速度更快，并且无需主题支持<br>修改站点根目录下面的_config.yml:</p><pre class="highlight"><code class="yaml"><span class="hljs-attr">math:</span>  <span class="hljs-attr">engine:</span> <span class="hljs-string">katex</span>  <span class="hljs-attr">katex:</span>    <span class="hljs-attr">css:</span> <span class="hljs-string">https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css</span>    <span class="hljs-attr">js:</span> <span class="hljs-string">https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js</span>    <span class="hljs-attr">config:</span>      <span class="hljs-comment"># KaTeX config</span>      <span class="hljs-attr">throwOnError:</span> <span class="hljs-literal">false</span>      <span class="hljs-attr">errorColor:</span> <span class="hljs-string">"#cc0000"</span></code></pre><p>主题文件夹中的_config.yml:</p><pre class="highlight"><code class="yaml"><span class="hljs-attr">math:</span>  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span>  <span class="hljs-attr">per_page:</span> <span class="hljs-literal">false</span>  <span class="hljs-comment">#engine: mathjax</span>  <span class="hljs-attr">engine:</span> <span class="hljs-string">katex</span>  <span class="hljs-attr">katex:</span>    <span class="hljs-comment"># Use 0.7.1 as default, jsdelivr as default CDN, works everywhere even in China</span>    <span class="hljs-attr">cdn:</span> <span class="hljs-string">//cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css</span>    <span class="hljs-comment">#cdn: //cdn.jsdelivr.net/npm/katex@0.7.1/dist/katex.min.css</span>    <span class="hljs-comment"># CDNJS, provided by cloudflare, maybe the best CDN, but not works in China</span>    <span class="hljs-comment">#cdn: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css</span>    <span class="hljs-attr">copy_tex:</span>      <span class="hljs-comment"># See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex</span>      <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span>      <span class="hljs-attr">copy_tex_js:</span> <span class="hljs-string">//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js</span>      <span class="hljs-attr">copy_tex_css:</span> <span class="hljs-string">//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css</span></code></pre><h2 id="图片支持hexo-asset-img-forhexo5"><a class="markdownIt-Anchor" href="#图片支持hexo-asset-img-forhexo5"></a> 图片支持：hexo-asset-img-forhexo5</h2><p>要求：本地markdown能渲染出图片，不做任何修改，网站部署就能在首页和文章中看到图片，公式同样这个要求</p><h3 id="方案一nextpandocobsidian"><a class="markdownIt-Anchor" href="#方案一nextpandocobsidian"></a> 方案一：next+pandoc+obsidian</h3><p>这也是我上个版本的解决方案<br><a href="https://theme-next.js.org/docs/third-party-services/math-equations">Math Equations | NexT</a></p><h3 id="方案二别的主题hexo-renderer-markdown-it-plusobsidian"><a class="markdownIt-Anchor" href="#方案二别的主题hexo-renderer-markdown-it-plusobsidian"></a> 方案二：别的主题+hexo-renderer-markdown-it-plus+obsidian</h3><p>这个版本不用next了，window对pandoc支持可能也有问题，安装时候报错。<br>查了半天资料，得出结论：必须在渲染时改为<code>{%xxx.jpg%}</code>格式，渲染前图片仅使用文件名，且hexo配置文件中<code>post_asset_folder: true</code>。<br>实现该功能的npm包<code>hexo-asset-image</code>已失效。由于这个功能时普遍的需求，懒得自己改源码，去npm官网搜索新的轮子。<br>使用npm包：<code>hexo-asset-img</code></p><h1 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h1><p><a href="https://blog.csdn.net/appleyuchi/article/details/92795620?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-1-92795620-blog-105846999.pc_relevant_multi_platform_whitelistv3&amp;spm=1001.2101.3001.4242.2&amp;utm_relevant_index=4">hexo 的 yelee 主题使用 katex 引擎(markdown 渲染加速)_微电子学与固体电子学-俞驰的博客-CSDN 博客</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;hexo-写博客基本流程&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#hexo-写博客基本流程&quot;&gt;&lt;/a&gt; hexo 写博客基本流程&lt;/h1&gt;
+&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;bash&quot;&gt;&lt;sp</summary>
+      
+    
+    
+    
+    <category term="tech-article" scheme="http://example.com/categories/tech-article/"/>
+    
+    
+    <category term="linux" scheme="http://example.com/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>复杂网络基础</title>
@@ -609,31 +634,6 @@ userdel -r
     
     
     <category term="python" scheme="http://example.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo workflow</title>
-    <link href="http://example.com/2021/06/19/hexo-workflow/"/>
-    <id>http://example.com/2021/06/19/hexo-workflow/</id>
-    <published>2021-06-19T12:29:51.000Z</published>
-    <updated>2022-10-09T08:44:16.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="hexo写博客基本流程"><a class="markdownIt-Anchor" href="#hexo写博客基本流程"></a> hexo写博客基本流程</h1><pre class="highlight"><code class="bash"><span class="hljs-built_in">cd</span> ~/bloghexo new <span class="hljs-string">"article name"</span><span class="hljs-comment"># 打开桌面post文件夹的快捷方式</span><span class="hljs-comment"># 用typora编辑新建好的md文件</span><span class="hljs-comment"># 添加tags</span><span class="hljs-comment"># 选择categories: tech-article or freetime</span><span class="hljs-comment"># 原来写好的只能新建后复制内容</span>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d<span class="hljs-comment"># 可以alias成一条命令 fabu</span><span class="hljs-comment"># 删除直接删文件</span></code></pre><h1 id="发布前的处理"><a class="markdownIt-Anchor" href="#发布前的处理"></a> 发布前的处理</h1><p>鉴于hexo各个渲染器的不完备，即使选择相对较好的pandoc，也要在发布前预处理。</p><ol><li>图片去除相对路径和中括号里的图注，只留下小括号里文件名。<s>这样会在typora本地看不到图片。</s></li></ol><blockquote><p>用obsidian完美解决</p></blockquote><ol start="2"><li>多行公式分块，行内公式不能有空格。</li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;hexo写博客基本流程&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#hexo写博客基本流程&quot;&gt;&lt;/a&gt; hexo写博客基本流程&lt;/h1&gt;
-&lt;pre class=&quot;highlight&quot;&gt;&lt;code class=&quot;bash&quot;&gt;&lt;span </summary>
-      
-    
-    
-    
-    <category term="tech-article" scheme="http://example.com/categories/tech-article/"/>
-    
-    
-    <category term="linux" scheme="http://example.com/tags/linux/"/>
     
   </entry>
   
