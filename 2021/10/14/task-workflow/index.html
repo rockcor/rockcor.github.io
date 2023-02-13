@@ -1,0 +1,446 @@
+<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>task workflow</title><meta name="description" content="May the Force be with you"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><link rel="stylesheet" href="/style/common/jquery.fancybox.min.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="Taskwarrior 使用指南
+Linux 命令行任务管理软件
+
+安装# Arch/Manjaro
+sudo pacman -S task
+sudo pacman -S taskwarrior-tui
+
+# ~/.bashrc
+alias tt=&quot;taskwarrior-tui&quot;
+
+开始第一个任务项目划分出任务，类似于其他软件的主任务和子任务，但taskwarrior里只能两层
+# 尽量一条长语句说明
+task add 任务名 project:项目名 due:eow 
+
+# 发现重现不了的bug
+task ID delete Could not reproduce bug +cannot_reproduce
+
+
+
+时间规划时间属性task add Send Alice a birthday card \
+.."><meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Rockcor's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">task workflow</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Taskwarrior-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97"><span class="toc-text">Taskwarrior 使用指南</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%BB%BB%E5%8A%A1"><span class="toc-text">开始第一个任务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E8%A7%84%E5%88%92"><span class="toc-text">时间规划</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%B1%9E%E6%80%A7"><span class="toc-text">时间属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F"><span class="toc-text">时间格式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#urgency%E5%80%BC"><span class="toc-text">urgency值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="toc-text">上下文</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#modify"><span class="toc-text">modify</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E5%92%8C%E8%99%9A%E6%8B%9F%E6%A0%87%E7%AD%BE"><span class="toc-text">过滤和虚拟标签</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tt%E6%8F%90%E4%BE%9B%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">tt提供的快捷键</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%8A%A5%E5%91%8A"><span class="toc-text">生成报告</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E7%BD%AE%E9%9D%99%E6%80%81%E6%8A%A5%E5%91%8A"><span class="toc-text">内置静态报告</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E7%BD%AE%E5%8A%A8%E6%80%81%E6%8A%A5%E5%91%8A"><span class="toc-text">内置动态报告</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8A%A5%E5%91%8A"><span class="toc-text">自定义报告</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5"><span class="toc-text">同步</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%8A%80%E5%B7%A7"><span class="toc-text">其他技巧</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#workflow"><span class="toc-text">workflow</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E9%98%B6"><span class="toc-text">进阶</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/linux"><i class="tag post-item-tag">linux</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">task workflow</h1><time class="has-text-grey" datetime="2021-10-14T01:48:38.000Z">2021-10-14</time><article class="mt-2 post-content"><h1 id="Taskwarrior-使用指南"><a href="#Taskwarrior-使用指南" class="headerlink" title="Taskwarrior 使用指南"></a>Taskwarrior 使用指南</h1><blockquote>
+<p>Linux 命令行任务管理软件</p>
+</blockquote>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><pre><code class="shell"># Arch/Manjaro
+sudo pacman -S task
+sudo pacman -S taskwarrior-tui
+
+# ~/.bashrc
+alias tt="taskwarrior-tui"
+</code></pre>
+<h1 id="开始第一个任务"><a href="#开始第一个任务" class="headerlink" title="开始第一个任务"></a>开始第一个任务</h1><p>项目划分出任务，类似于其他软件的主任务和子任务，但taskwarrior里只能两层</p>
+<pre><code class="shell"># 尽量一条长语句说明
+task add 任务名 project:项目名 due:eow 
+
+# 发现重现不了的bug
+task ID delete Could not reproduce bug +cannot_reproduce
+</code></pre>
+<span id="more"></span>
+
+<h1 id="时间规划"><a href="#时间规划" class="headerlink" title="时间规划"></a>时间规划</h1><h2 id="时间属性"><a href="#时间属性" class="headerlink" title="时间属性"></a>时间属性</h2><pre><code class="shell">task add Send Alice a birthday card \
+           due:2016-11-08 \
+           scheduled:2016-11-04 \
+           wait:november
+           until:2016-11-10
+</code></pre>
+<p>due: 任务完成的预计时间</p>
+<p>scheduled: 任务开始的预计时间</p>
+<p>wait: 任务在列表里出现的时间，<code>task list</code>会自动过滤，可以用<code>task waiting</code>查看</p>
+<p>until: 任务自行销毁的时间</p>
+<h2 id="时间格式"><a href="#时间格式" class="headerlink" title="时间格式"></a>时间格式</h2><p><strong>基本格式：YYYY-MM-DDThh:mm</strong></p>
+<ul>
+<li>可以YYYY-MM、YYYY-MM-DD、hh:mm</li>
+<li>所有有歧义的都按最早的算</li>
+<li>也可按时间跨度，3d、3h</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>快捷命令</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>now</code></td>
+<td>Current local date and time.</td>
+</tr>
+<tr>
+<td><code>today</code></td>
+<td>Current local date, with time 00:00:00.</td>
+</tr>
+<tr>
+<td><code>sod</code></td>
+<td>Local date of the start of the next day, with time 00:00:00. Same as <code>tomorrow</code>.</td>
+</tr>
+<tr>
+<td><code>eod</code></td>
+<td>Current local date, with time 23:59:59.</td>
+</tr>
+<tr>
+<td><code>yesterday</code></td>
+<td>Local date for yesterday, with time 00:00:00.</td>
+</tr>
+<tr>
+<td><code>tomorrow</code></td>
+<td>Local date for tomorrow, with time 00:00:00. Same as <code>sod</code>.</td>
+</tr>
+<tr>
+<td><code>monday</code>, <code>tuesday</code> …</td>
+<td>Local date for the specified day, after today, with time 00:00:00. Can be shortened, e.g. <code>mon</code>, <code>tue</code> <strong>2.6.0</strong> Can be capitalized, e.g. <code>Monday</code>, <code>Tue</code></td>
+</tr>
+<tr>
+<td><code>january</code>, <code>february</code> …</td>
+<td>Local date for the specified month, 1st day, with time 00:00:00. Can be shortened, e.g. <code>jan</code>, <code>feb</code>. <strong>2.6.0</strong> Can be capitalized, e.g. <code>January</code>, <code>Feb</code>.</td>
+</tr>
+<tr>
+<td><code>later</code>, <code>someday</code></td>
+<td>Local 2038-01-18, with time 00:00:00. A date far away, with semantically meaningful to GTD users.</td>
+</tr>
+<tr>
+<td><code>soy</code></td>
+<td>Local date for the next year, January 1st, with time 00:00:00.</td>
+</tr>
+<tr>
+<td><code>eoy</code></td>
+<td>Local date for this year, December 31st, with time 00:00:00.</td>
+</tr>
+<tr>
+<td><code>soq</code></td>
+<td>Local date for the start of the next quarter (January, April, July, October), 1st, with time 00:00:00.</td>
+</tr>
+<tr>
+<td><code>eoq</code></td>
+<td>Local date for the end of the current quarter (March, June, September, December), last day of the month, with time 23:59:59.</td>
+</tr>
+<tr>
+<td><code>som</code></td>
+<td>Local date for the 1st day of the next month, with time 00:00:00.</td>
+</tr>
+<tr>
+<td><code>socm</code></td>
+<td>Local date for the 1st day of the current month, with time 00:00:00.</td>
+</tr>
+<tr>
+<td><code>eom</code>, <code>eocm</code></td>
+<td>Local date for the last day of the current month, with time 23:59:59.</td>
+</tr>
+<tr>
+<td><code>sow</code></td>
+<td>Local date for the next Sunday, with time 00:00:00.</td>
+</tr>
+<tr>
+<td><code>socw</code></td>
+<td>Local date for the last Sunday, with time 00:00:00.</td>
+</tr>
+<tr>
+<td><code>eow</code>, <code>eocw</code></td>
+<td>Local date for the end of the week, Saturday night, with time 00:00:00.</td>
+</tr>
+<tr>
+<td><code>soww</code></td>
+<td>Local date for the start of the work week, next Monday, with time 00:00:00.</td>
+</tr>
+<tr>
+<td><code>eoww</code></td>
+<td>Local date for the end of the work week, Friday night, with time 23:59:59.</td>
+</tr>
+<tr>
+<td><code>1st</code>, <code>2nd</code>, …</td>
+<td>Local date for the next Nth day, with time 00:00:00.</td>
+</tr>
+</tbody></table>
+<h1 id="urgency值"><a href="#urgency值" class="headerlink" title="urgency值"></a>urgency值</h1><pre><code class="shell">urgency.user.tag.next.coefficient           15.0 # +next 标签
+urgency.due.coefficient                     12.0 # 过期或临近ddl
+urgency.blocking.coefficient                 8.0 # 阻塞其他任务
+urgency.uda.priority.H.coefficient           6.0 # 设为高优先级
+urgency.uda.priority.M.coefficient           3.9 # 设为中优先级
+urgency.uda.priority.L.coefficient           1.8 # 设为低优先级
+urgency.scheduled.coefficient                5.0 # 定了预定时间的任务
+urgency.active.coefficient                   4.0 # 激活的任务
+urgency.age.coefficient                      2.0 # 根据任务创建时间
+urgency.annotations.coefficient              1.0 # 添加了注释
+urgency.tags.coefficient                     1.0 # 添加了标签
+urgency.project.coefficient                  1.0 # 属于某个项目
+urgency.user.project.My Project.coefficient  5.0 # 属于高优先级的某个项目
+urgency.waiting.coefficient                 -3.0 # 等待中的任务
+urgency.blocked.coefficient                 -5.0 # 阻塞中的任务
+</code></pre>
+<h1 id="上下文"><a href="#上下文" class="headerlink" title="上下文"></a>上下文</h1><p>定义上下文，通过tag的代数表达式过滤任务</p>
+<pre><code>task context define work +work or +freelance
+task context define study +school or +homework or +lab
+task context define home -work -freelance -school -homework -lab
+</code></pre>
+<pre><code class="shell"># 查看已经创建的上下文
+task context show
+
+# 切换上下文
+task context work
+</code></pre>
+<h1 id="modify"><a href="#modify" class="headerlink" title="modify"></a>modify</h1><pre><code class="shell"># 设置依赖
+# 79任务所依赖的78任务未完成，A任务状态为blocked
+task 79 modify depends:78
+
+# 删除某个属性
+task 1 modify due:
+
+# 修改描述
+task ID modify ...
+
+# 修改属性
+task ID modify project:Home
+task ID modify priority:M
+task ID modify +problem +house
+</code></pre>
+<h1 id="过滤和虚拟标签"><a href="#过滤和虚拟标签" class="headerlink" title="过滤和虚拟标签"></a>过滤和虚拟标签</h1><p>通常用状态、所属项目、标签来过滤。</p>
+<pre><code class="shell">status:pending and project:Home or -work
+</code></pre>
+<p>要用时间来过滤，比如我们要过滤出今晚12:00前到期的任务。</p>
+<pre><code class="shell">task due.after:yesterday and due.before:tomorrow list
+</code></pre>
+<p>这样写很麻烦，2.2版本后加入了虚拟标签，请不要用自定义标签占用它们。</p>
+<p>上面的过滤可以简化为</p>
+<pre><code class="shell">task +TODAY list
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>虚拟标签</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>BLOCKED</code></td>
+<td>Is the task dependent on another incomplete task?</td>
+</tr>
+<tr>
+<td><code>UNBLOCKED</code></td>
+<td>The opposite of BLOCKED, for convenience. Note +BLOCKED == -UNBLOCKED and vice versa.</td>
+</tr>
+<tr>
+<td><code>BLOCKING</code></td>
+<td>Does another task depend on this incomplete task?</td>
+</tr>
+<tr>
+<td><code>DUE</code></td>
+<td>Is this task due within 7 days? Determined by rc.due</td>
+</tr>
+<tr>
+<td><code>DUETODAY</code></td>
+<td>Is this task due sometime today?</td>
+</tr>
+<tr>
+<td><code>TODAY</code></td>
+<td>Is this task due sometime today?</td>
+</tr>
+<tr>
+<td><code>OVERDUE</code></td>
+<td>Is this task past it’s due date?</td>
+</tr>
+<tr>
+<td><code>WEEK</code></td>
+<td>Is this task due this week? <strong>2.3.0</strong></td>
+</tr>
+<tr>
+<td><code>MONTH</code></td>
+<td>Is this task due this month? <strong>2.3.0</strong></td>
+</tr>
+<tr>
+<td><code>QUARTER</code></td>
+<td>Is this task due this quarter? <strong>2.6.0</strong></td>
+</tr>
+<tr>
+<td><code>YEAR</code></td>
+<td>Is this task due this year? <strong>2.3.0</strong></td>
+</tr>
+<tr>
+<td><code>ACTIVE</code></td>
+<td>Is the task active, ie does it have a start date?</td>
+</tr>
+<tr>
+<td><code>SCHEDULED</code></td>
+<td>Is the task scheduled, ie does it have a scheduled date?</td>
+</tr>
+<tr>
+<td><code>PARENT</code></td>
+<td>Is the task a hidden parent recurring task? <strong>2.3.0</strong></td>
+</tr>
+<tr>
+<td><code>CHILD</code></td>
+<td>Is the task a recurring child task?</td>
+</tr>
+<tr>
+<td><code>UNTIL</code></td>
+<td>Does the task expire, ie does it have an until date?</td>
+</tr>
+<tr>
+<td><code>WAITING</code></td>
+<td>Is the task hidden, ie does it have a wait date?</td>
+</tr>
+<tr>
+<td><code>ANNOTATED</code></td>
+<td>Does the task have any annotations?</td>
+</tr>
+<tr>
+<td><code>READY</code></td>
+<td>Is the task pending, not blocked, and either not scheduled, or scheduled before now. <strong>2.4.0</strong></td>
+</tr>
+<tr>
+<td><code>YESTERDAY</code></td>
+<td>Was the task due yesterday? <strong>2.4.0</strong></td>
+</tr>
+<tr>
+<td><code>TOMORROW</code></td>
+<td>Is the task due tomorrow? <strong>2.4.0</strong></td>
+</tr>
+<tr>
+<td><code>TAGGED</code></td>
+<td>Does the task have any tags?</td>
+</tr>
+<tr>
+<td><code>PENDING</code></td>
+<td>Is the task in the pending state? <strong>2.4.0</strong></td>
+</tr>
+<tr>
+<td><code>COMPLETED</code></td>
+<td>Is the task in the completed state? <strong>2.4.0</strong></td>
+</tr>
+<tr>
+<td><code>DELETED</code></td>
+<td>Is the task in the deleted state? <strong>2.4.0</strong></td>
+</tr>
+<tr>
+<td><code>UDA</code></td>
+<td>Does the task contain any UDA values? <strong>2.5.0</strong></td>
+</tr>
+<tr>
+<td><code>ORPHAN</code></td>
+<td>Does the task contain any orphaned UDA values? <strong>2.5.0</strong></td>
+</tr>
+<tr>
+<td><code>PRIORITY</code></td>
+<td>Does the task have a priority? <strong>2.5.0</strong></td>
+</tr>
+<tr>
+<td><code>PROJECT</code></td>
+<td>Does the task have a project? <strong>2.5.0</strong></td>
+</tr>
+<tr>
+<td><code>LATEST</code></td>
+<td>Is the task the most recently added task? <strong>2.5.0</strong></td>
+</tr>
+</tbody></table>
+<h1 id="tt提供的快捷键"><a href="#tt提供的快捷键" class="headerlink" title="tt提供的快捷键"></a>tt提供的快捷键</h1><pre><code class="shell">uda.taskwarrior-tui.keyconfig.quit=q
+uda.taskwarrior-tui.keyconfig.refresh=r
+uda.taskwarrior-tui.keyconfig.go-to-bottom=G
+uda.taskwarrior-tui.keyconfig.go-to-top=g
+uda.taskwarrior-tui.keyconfig.down=j
+uda.taskwarrior-tui.keyconfig.up=k
+uda.taskwarrior-tui.keyconfig.page-down=J
+uda.taskwarrior-tui.keyconfig.page-up=K
+uda.taskwarrior-tui.keyconfig.delete=x
+uda.taskwarrior-tui.keyconfig.done=d
+uda.taskwarrior-tui.keyconfig.start-stop=s
+uda.taskwarrior-tui.keyconfig.undo=u
+uda.taskwarrior-tui.keyconfig.edit=e
+uda.taskwarrior-tui.keyconfig.modify=m
+uda.taskwarrior-tui.keyconfig.shell=!
+uda.taskwarrior-tui.keyconfig.log=l
+uda.taskwarrior-tui.keyconfig.add=a
+uda.taskwarrior-tui.keyconfig.annotate=A
+uda.taskwarrior-tui.keyconfig.filter=/
+uda.taskwarrior-tui.keyconfig.zoom=z
+uda.taskwarrior-tui.keyconfig.context-menu=c
+uda.taskwarrior-tui.keyconfig.next-tab=]
+uda.taskwarrior-tui.keyconfig.previous-tab=[
+</code></pre>
+<h1 id="生成报告"><a href="#生成报告" class="headerlink" title="生成报告"></a>生成报告</h1><p><code>task ...</code></p>
+<h2 id="内置静态报告"><a href="#内置静态报告" class="headerlink" title="内置静态报告"></a>内置静态报告</h2><pre><code>burndown.daily
+burndown.monthly
+burndown.weekly
+calendar
+colors
+export
+ghistory.annual
+ghistory.monthly
+history.annual
+history.monthly
+information
+summary
+timesheet
+</code></pre>
+<h2 id="内置动态报告"><a href="#内置动态报告" class="headerlink" title="内置动态报告"></a>内置动态报告</h2><pre><code class="shell">active
+all
+blocked
+blocking
+completed
+list
+long
+ls
+minimal
+newest
+next
+oldest
+overdue
+ready
+recurring
+unblocked
+waiting
+</code></pre>
+<h2 id="自定义报告"><a href="#自定义报告" class="headerlink" title="自定义报告"></a>自定义报告</h2><pre><code class="shell">task config report.simple.description 'Simple list of open tasks by project'
+task config report.simple.columns     'id,project,description.count'
+task config report.simple.labels      'ID,Proj,Desc'
+task config report.simple.sort        'project+/,entry+'
+task config report.simple.filter      'status:pending'
+
+task simple
+</code></pre>
+<h1 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h1><p>原来准备使用 <a target="_blank" rel="noopener" href="https://inthe.am/">inthe.am</a> 提供的工具使其跟 <a target="_blank" rel="noopener" href="https://trello.com/">trello</a> 同步，而trello支持win/macos/ios/linux/android。</p>
+<p>inthe.am主页本身提供task的GUI功能，在浏览器上就可以多端同步。</p>
+<p>在登录后, 按照 <a target="_blank" rel="noopener" href="https://inthe.am/configure">Configuration &amp; Settings</a> 中的提示，下载三个文件，修改<code>~/.taskrc</code>，然后<code>task sync init</code>。之后通过 <code>task sync</code> 指令同步任务列表, 既可以达到跨平台同步的功能了。</p>
+<blockquote>
+<p>由于trello和taskwarrior功能逻辑不完全一致，建议不要在trello上操作，而是作为只读的看板</p>
+</blockquote>
+<h1 id="其他技巧"><a href="#其他技巧" class="headerlink" title="其他技巧"></a>其他技巧</h1><pre><code class="shell"># 自定义命令
+task config alias.rm delete
+
+# 自定义快捷键 ~/.taskrc
+# 这句由官方给出，但不生效
+#uda.taskwarrior-tui.keyconfig.shortcut1=S
+uda.taskwarrior-tui.shortcuts.1=task sync
+
+# 批量处理，在tt中按v
+task 67,76-79 modify project:fosscontrib
+
+# 彻底删除deleted的任务,2.6新加入的特性，原来用过滤器隐藏
+task purge
+
+# 加入任务并标记为完成
+task log ...
+
+# 阻塞别的任务且不被别的任务阻塞优先级最高
+task +BLOCKING -BLOCKED
+</code></pre>
+<h1 id="workflow"><a href="#workflow" class="headerlink" title="workflow"></a>workflow</h1><ol>
+<li>每天早上打开manjaro<ol>
+<li>sudo pacman -Syu</li>
+<li>tt</li>
+</ol>
+</li>
+<li>按以下优先级选择任务<ol>
+<li>昨晚离开前仍处于start的任务</li>
+<li>按urgency选择</li>
+</ol>
+</li>
+<li>按s开始任务，按s搁置，完成后done，一段时间后delete</li>
+<li>按1同步，现设置为每一小时自动同步</li>
+<li><code>task burndown.monthly/weekly</code>查看报表</li>
+<li>多端需求用inthe.am</li>
+</ol>
+<h1 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h1><p><a target="_blank" rel="noopener" href="https://taskwarrior.org/docs/terminology.html">https://taskwarrior.org/docs/terminology.html</a></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://taskwarrior.org/docs/commands/">https://taskwarrior.org/docs/commands/</a></p>
+<p><a target="_blank" rel="noopener" href="https://kdheepak.com/taskwarrior-tui/">https://kdheepak.com/taskwarrior-tui/</a></p>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2021/10/18/muxViz-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/" title="muxViz 使用指南"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: muxViz 使用指南</span></a><a class="button is-default" href="/2021/10/11/%E4%B8%AA%E4%BA%BA%E5%93%81%E7%89%8C%E7%9A%84%E5%BC%80%E5%A7%8B/" title="个人品牌的开始"><span class="has-text-weight-semibold">Next: 个人品牌的开始</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><article class="mt-6 comment-container"><script async repo="rockcor/blog-comment" src="https://utteranc.es/client.js" issue-term="pathname" theme="preferred-color-scheme"></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/rockcor"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Rockcor 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script></body></html>

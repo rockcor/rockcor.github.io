@@ -1,0 +1,107 @@
+<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>Rockcor's blog</title><meta name="description" content="May the Force be with you"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><link rel="stylesheet" href="/style/common/jquery.fancybox.min.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="一 推荐系统简介​        个性化推荐(推荐系统)经历了多年的发展，已经成为互联网产品的标配，也是AI成功落地的分支之一，在电商(淘宝/京东)、资讯(今日头条/微博)、音乐(网易云音乐/QQ音乐)、短视频(抖音/快手)等热门应用中,推荐系统都是核心组件之一。
+
+推荐系统产生背景
+
+信息过载 &amp;amp; 用户需求不明确
+分类⽬录（1990s）：覆盖少量热门⽹站。Hao123 Yahoo
+搜索引擎（2000s）：通过搜索词明确需求。Google Baidu
+推荐系统（2010s）：不需要⽤户提供明确的需求，通过分析⽤户的历史⾏为给⽤户的兴趣进⾏建模，从⽽主动给⽤户推荐能够满⾜他们兴趣和需求的信息。
+
+
+
+
+什么是推荐系统
+
+没有明确需求的用户访问了我们的服务, 且服务的物品对用户构成了信息过载, 系统通过.."><meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Rockcor's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center"></p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B"><span class="toc-text">一 推荐系统简介</span></a></li></ol></div><div class="column is-9"><header class="my-4"></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle"></h1><time class="has-text-grey" datetime="2023-02-13T05:36:25.605Z">2023-02-13</time><article class="mt-2 post-content"><h2 id="一-推荐系统简介"><a href="#一-推荐系统简介" class="headerlink" title="一 推荐系统简介"></a>一 推荐系统简介</h2><p>​        个性化推荐(推荐系统)经历了多年的发展，已经成为互联网产品的标配，也是AI成功落地的分支之一，在电商(淘宝/京东)、资讯(今日头条/微博)、音乐(网易云音乐/QQ音乐)、短视频(抖音/快手)等热门应用中,推荐系统都是核心组件之一。</p>
+<ul>
+<li><p>推荐系统产生背景</p>
+<ul>
+<li>信息过载 &amp; 用户需求不明确<ul>
+<li>分类⽬录（1990s）：覆盖少量热门⽹站。Hao123 Yahoo</li>
+<li>搜索引擎（2000s）：通过搜索词明确需求。Google Baidu</li>
+<li>推荐系统（2010s）：不需要⽤户提供明确的需求，通过分析⽤<br>户的历史⾏为给⽤户的兴趣进⾏建模，从⽽主动给⽤户推荐能<br>够满⾜他们兴趣和需求的信息。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>什么是推荐系统</p>
+<ul>
+<li>没有明确需求的用户访问了我们的服务, 且服务的物品对用户构成了信息过载, 系统通过一定的规则对物品进行排序,并将排在前面的物品展示给用户,这样的系统就是推荐系统</li>
+</ul>
+</li>
+<li><p>推荐系统 V.S. 搜索引擎</p>
+<table>
+  <tbody><tr>
+    <th></th>
+    <th>搜索</th>
+    <th>推荐</th>
+  </tr>
+  <tr>
+    <td> 行为方式 </td>
+    <td> 主动 </td>
+    <td> 被动 </td>
+  </tr>
+  <tr>
+    <td> 意图 </td>
+    <td> 明确 </td>
+    <td> 模糊 </td>
+  </tr>
+  <tr>
+    <td> 个性化 </td>
+    <td> 弱 </td>
+    <td> 强 </td>
+  </tr>
+  <tr>
+    <td> 流量分布 </td>
+    <td> 马太效应 </td>
+    <td> 长尾效应 </td>
+  </tr>
+  <tr>
+    <td> 目标 </td>
+    <td> 快速满足  </td>
+    <td> 持续服务 </td>
+  </tr>
+  <tr>
+    <td> 评估指标 </td>
+    <td> 简明 </td>
+    <td> 复杂 </td>
+  </tr>
+</tbody></table>
+</li>
+<li><p>推荐系统的作用</p>
+<ul>
+<li>高效连接用户和物品, 发现长尾商品</li>
+<li>留住用户和内容生产者, 实现商业目标</li>
+</ul>
+</li>
+<li><p>推荐系统的工作原理</p>
+<ul>
+<li><strong>社会化推荐</strong> 向朋友咨询, 社会化推荐, 让好友给自己推荐物品</li>
+<li><strong>基于内容的推荐</strong> 打开搜索引擎, 输入自己喜欢的演员的名字, 然后看看返回结果中还有什么电影是自己没看过的</li>
+<li><strong>基于流行度的推荐</strong> 查看票房排行榜, </li>
+<li><strong>基于协同过滤的推荐</strong> 找到和自己历史兴趣相似的用户, 看看他们最近在看什么电影</li>
+</ul>
+</li>
+<li><p>推荐系统的应用场景 feed 流 信息流 </p>
+<p><img src="/./img/recommend1.png"></p>
+</li>
+<li><p>推荐系统和Web项目的区别</p>
+<ul>
+<li>稳定的信息流通系统 V.S. 通过信息过滤实现目标提升 <ul>
+<li>web项目: 处理复杂逻辑 处理高并发 实现高可用 为用户提供稳定服务, 构建一个稳定的信息流通的服务</li>
+<li>推荐系统: 追求指标增长, 留存率/阅读时间/GMV (Gross Merchandise Volume电商网站成交金额)/视频网站VV (Video View)</li>
+</ul>
+</li>
+<li>确定 V.S. 不确定思维<ul>
+<li>web项目: 对结果有确定预期</li>
+<li>推荐系统: 结果是概率问题</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/02_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" title=""><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: </span></a><a class="button is-default" href="/2023/02/13/%E6%8A%95%E8%B5%84%E7%9A%84%E5%BF%83%E6%80%81/" title=""><span class="has-text-weight-semibold">Next: </span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><article class="mt-6 comment-container"><script async repo="rockcor/blog-comment" src="https://utteranc.es/client.js" issue-term="pathname" theme="preferred-color-scheme"></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/rockcor"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Rockcor 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script></body></html>

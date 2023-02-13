@@ -1,0 +1,240 @@
+<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>Rockcor's blog</title><meta name="description" content="May the Force be with you"><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/widget-post-list.css"><meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Rockcor's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><span>Archives · 2023</span></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><article class="post-container is-flex is-justify-content-center section container is-max-widescreen pt-4 px-2"><div class="columns is-variable is-1-tablet is-3-desktop-only is-2-widescreen is-full-width"><section class="column"><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:25.632Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">案例–算法实现：Item-Based CF 预测评分评分预测公式：$$pred(u,i)=\hat{r}{ui}=\cfrac{\sum{j\in I_{rated}}sim(i,j)*r_{uj}}{\sum_{j\in I_{rated}}sim(i,j)}$$
+算法实现
+实现评分预测方法：predict
+
+方法说明：
+利用原始评分矩阵、以及物品间两两相似度，预测指定用户对指定物品的评分。
+如果无法预测，则抛出异常
+
+
+# ......
+
+def predict(uid, iid, ratings_matrix, item_similar):
+    '''
+    预测给定用户对给定物品的评分值
+    :param uid: 用户ID
+    :param iid: 物品ID
+    :param ..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/08_%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%EF%BC%9AItem-Based%20CF%20%E9%A2%84%E6%B5%8B%E8%AF%84%E5%88%86/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:25.630Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">案例–算法实现：User-Based CF 预测评分评分预测公式：$$pred(u,i)=\hat{r}{ui}=\cfrac{\sum{v\in U}sim(u,v)*r_{vi}}{\sum_{v\in U}|sim(u,v)|}$$
+算法实现
+实现评分预测方法：predict
+# ......
+
+def predict(uid, iid, ratings_matrix, user_similar):
+    '''
+    预测给定用户对给定物品的评分值
+    :param uid: 用户ID
+    :param iid: 物品ID
+    :param ratings_matrix: 用户-物品评分矩阵
+    :param user_similar: 用户两两相似度矩阵
+    :return..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/07_%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%EF%BC%9AUser-Based%20CF%20%E9%A2%84%E6%B5%8B%E8%AF%84%E5%88%86/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:25.619Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">案例–基于协同过滤的电影推荐前面我们已经基本掌握了协同过滤推荐算法，以及其中两种最基本的实现方案：User-Based CF和Item-Based CF，下面我们将利用真是的数据来进行实战演练。
+案例需求 演示效果
+分析案例
+数据集下载MovieLens Latest Datasets Small
+建议下载ml-latest-small.zip，数据量小，便于我们单机使用和运行
+目标：根据ml-latest-small/ratings.csv（用户-电影评分数据），分别实现User-Based CF和Item-Based CF，并进行电影评分的预测，然后为用户实现电影推荐
+数据集加载
+加载ratings.csv，并转换为用户-电影评分矩阵
+import os
+
+import pandas as pd
+imp..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/06_%E6%A1%88%E4%BE%8B--%E5%9F%BA%E4%BA%8E%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%9A%84%E7%94%B5%E5%BD%B1%E6%8E%A8%E8%8D%90/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/./img/recommend4.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/05_%20%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E5%86%B7%E5%90%AF%E5%8A%A8%E9%97%AE%E9%A2%98/"><img class="post-cover-img js-img-fadeIn" src="/./img/recommend4.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:25.617Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">推荐系统的冷启动问题
+推荐系统冷启动概念
+
+⽤户冷启动：如何为新⽤户做个性化推荐
+物品冷启动：如何将新物品推荐给⽤户（协同过滤）
+系统冷启动：⽤户冷启动+物品冷启动
+本质是推荐系统依赖历史数据，没有历史数据⽆法预测⽤户偏好
+
+
+用户冷启动
+
+1.收集⽤户特征
+
+⽤户注册信息：性别、年龄、地域（不能太多，不然用户不填写）
+
+设备信息：定位、⼿机型号、app列表
+
+社交信息、推⼴素材、安装来源
+
+
+
+
+2 引导用户填写兴趣
+
+
+3 使用其它站点的行为数据, 例如腾讯视频&amp;amp;QQ音乐 今日头条&amp;amp;抖音
+
+4 新老用户推荐策略的差异
+
+新⽤户在冷启动阶段更倾向于热门排⾏榜，⽼⽤户会更加需要长尾推荐
+Explore Exploit⼒度（新用户探索是保守）
+使⽤单独的特征和模型预估–新旧用户分离
+
+
+举例 ..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/05_%20%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E5%86%B7%E5%90%AF%E5%8A%A8%E9%97%AE%E9%A2%98/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/./img/algorithm1.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/04_%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/"><img class="post-cover-img js-img-fadeIn" src="/./img/algorithm1.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:25.616Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">推荐算法
+推荐模型构建流程
+推荐算法概述
+基于协同过滤的推荐算法
+协同过滤实现
+
+一 推荐模型构建流程Data(数据)-&amp;gt;Features(特征)-&amp;gt;ML Algorithm(机器学习算法)-&amp;gt;Prediction Output(预测输出)
+
+数据清洗/数据处理
+
+
+
+数据来源
+显性数据
+Rating 打分
+Comments 评论/评价
+
+
+隐形数据
+ Order history 历史订单
+ Cart events    加购物车
+ Page views    页面浏览
+ Click-thru      点击
+ Search log     搜索记录
+
+
+
+
+数据量/数据能否满足要求
+特征工程
+
+
+
+从数据中筛选特征
+一个给定的商品，可能被拥有类似品味或需求的用户购买
+使用用户行为数据描述..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/04_%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/img/recommend2.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/03_%20%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E8%AF%84%E4%BC%B0/"><img class="post-cover-img js-img-fadeIn" src="/img/recommend2.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:25.609Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">二 推荐系统评估
+好的推荐系统可以实现用户, 服务提供方, 内容提供方的共赢
+
+
+
+显示反馈和隐式反馈
+
+  
+    
+    显式反馈
+    隐式反馈
+  
+  
+  例子 
+  电影/书籍评分 
+ 是否喜欢这个推荐 
+  播放/点击 评论 下载 购买 
+  
+  
+     准确性 
+     高 
+     低 
+  
+  
+     数量 
+     少 
+     多 
+  
+  
+     获取成本 
+     高 
+     低 
+  
+
+
+
+常用评估指标
+• 准确性  • 信任度• 满意度  • 实时性• 覆盖率  • 鲁棒性• 多样性  • 可扩展性• 新颖性  • 商业⽬标• 惊喜度  • ⽤户留存
+
+准确性 (理论角度) Netflix 美国录像带租赁
+评分预测
+RMSE   MA..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/03_%20%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E8%AF%84%E4%BC%B0/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/../img/%E6%8E%A8%E8%8D%90%E6%B5%81%E7%A8%8B.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/02_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"><img class="post-cover-img js-img-fadeIn" src="/../img/%E6%8E%A8%E8%8D%90%E6%B5%81%E7%A8%8B.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:25.607Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">二 推荐系统设计2.1 推荐系统要素
+UI 和 UE(前端界面)
+数据 (Lambda架构)
+业务知识
+算法
+
+2.2 推荐系统架构
+推荐系统整体架构
+
+
+大数据Lambda架构
+
+由Twitter工程师Nathan Marz(storm项目发起人)提出
+
+Lambda系统架构提供了一个结合实时数据和Hadoop预先计算的数据环境和混合平台, 提供一个实时的数据视图
+
+分层架构
+
+批处理层
+数据不可变, 可进行任何计算, 可水平扩展
+高延迟  几分钟~几小时(计算量和数据量不同)
+日志收集 Flume
+分布式存储 Hadoop hdfs
+分布式计算 Hadoop MapReduce &amp;amp; spark
+视图存储数据库
+nosql(HBase/Cassandra)
+Redis/memcache
+MySQL..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/02_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/./img/recommend1.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B/"><img class="post-cover-img js-img-fadeIn" src="/./img/recommend1.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:25.605Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">一 推荐系统简介​        个性化推荐(推荐系统)经历了多年的发展，已经成为互联网产品的标配，也是AI成功落地的分支之一，在电商(淘宝/京东)、资讯(今日头条/微博)、音乐(网易云音乐/QQ音乐)、短视频(抖音/快手)等热门应用中,推荐系统都是核心组件之一。
+
+推荐系统产生背景
+
+信息过载 &amp;amp; 用户需求不明确
+分类⽬录（1990s）：覆盖少量热门⽹站。Hao123 Yahoo
+搜索引擎（2000s）：通过搜索词明确需求。Google Baidu
+推荐系统（2010s）：不需要⽤户提供明确的需求，通过分析⽤户的历史⾏为给⽤户的兴趣进⾏建模，从⽽主动给⽤户推荐能够满⾜他们兴趣和需求的信息。
+
+
+
+
+什么是推荐系统
+
+没有明确需求的用户访问了我们的服务, 且服务的物品对用户构成了信息过载, 系统通过..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:25.489Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">普通投资者把精力花在学习投资知识和策略上，有什么意义呢？什么是健康的投资心态？从投资这件事上如何历练正确的积极的心态，以对我们的人生有所帮助？
+避免的陷阱
+时间沉没成本我已经花了多少时间在这上面？这部分投入换算成金钱，增加到我的亏损上，最终结果应当还是盈余。
+未获得的和已经失去的
+短线的痛苦
+
+正确的心态
+长远眼光
+市场知识的学习
+人性的学习
+避免生活中的陷阱
+
+</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/%E6%8A%95%E8%B5%84%E7%9A%84%E5%BF%83%E6%80%81/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/image-20230211193156286.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/%E5%A4%B4%E6%9D%A1%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8E%A8%E8%8D%90%E9%A1%B9%E7%9B%AE/"><img class="post-cover-img js-img-fadeIn" src="/image-20230211193156286.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:25.488Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">
+环境配置启动 hadoop、hive(连接 mysql)#~/hadoop_code/start_hive.sh
+start-all.sh
+service docker start
+docker start mysql
+hive --service metastore &amp;amp;
+
+#查看mysql
+docker exec -it mysql bash
+mysql -uroot -p
+#密码: password
+ctrl+P+Q 退出
+
+启动 hbase、spark、thriftservercd ~/bigdata
+start-hbase.sh
+./spark/sbin/start-all.sh
+hbase thrift start
+
+检查jps
+
+10948 ThriftServer
+3816 Reso..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/%E5%A4%B4%E6%9D%A1%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8E%A8%E8%8D%90%E9%A1%B9%E7%9B%AE/">Read more</a></section></article><section class="paginator is-flex is-justify-content-flex-end is-flex-wrap-wrap mt-5"><a class="extend prev" rel="prev" href="/archives/2023/02/"><i class="iconfont icon-prev has-text-grey"></i></a><a class="page-number" href="/archives/2023/02/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2023/02/page/3/">3</a><a class="extend next" rel="next" href="/archives/2023/02/page/3/"><i class="iconfont icon-next has-text-grey"></i></a></section></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container archives-widget is-in-archive-page"><h3>Archives</h3><section><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a><span class="archive-list-count">3</span></li></ul></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+
+window.addEventListener('resize', $claudia.throttle(function () {
+    var images = document.querySelectorAll('.js-img-fadeIn')
+
+    images.forEach($claudia.blurBackdropImg)
+}, 150))</script></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/rockcor"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Rockcor 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+
+window.addEventListener('resize', $claudia.throttle(function () {
+    var images = document.querySelectorAll('.js-img-fadeIn')
+
+    images.forEach($claudia.blurBackdropImg)
+}, 150))</script></body></html>
