@@ -519,9 +519,9 @@ select * from students where age &amp;gt; (select avg(age) from students);
     <category term="tech-article" scheme="http://example.com/categories/tech-article/"/>
     
     
-    <category term="SQL" scheme="http://example.com/tags/SQL/"/>
-    
     <category term="MySQL" scheme="http://example.com/tags/MySQL/"/>
+    
+    <category term="SQL" scheme="http://example.com/tags/SQL/"/>
     
   </entry>
   
