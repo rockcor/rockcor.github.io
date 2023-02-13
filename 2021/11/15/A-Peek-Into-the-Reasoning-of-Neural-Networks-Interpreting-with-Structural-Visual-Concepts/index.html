@@ -42,7 +42,7 @@ VCE (Visual .."><!-- hexo injector head_end start -->
 <li>副产品：可以给出预测错误的原因</li>
 </ol>
 <h1 id="framework"><a class="markdownIt-Anchor" href="#framework"></a> Framework</h1>
-<p><img src="image-20211110153323457.png" alt=""></p>
+<p><img src="/2021/11/15/A-Peek-Into-the-Reasoning-of-Neural-Networks-Interpreting-with-Structural-Visual-Concepts/image-20211110153323457.png" alt=""></p>
 <ol>
 <li>VCE (Visual Concept Extractor) : Grad-Cam的attention map过滤背景，用ACE (SLIC分割 -&gt; patch resize -&gt; patch2vec -&gt; 聚类 -&gt; TCAV) 得到最重要的四个视觉概念</li>
 <li>SCG (Structural Concept Graph) : 按照人脑的思维方式，四个概念的空间相对关系应该是确定的。对四个视觉概念按空间结构构图。</li>
@@ -68,7 +68,7 @@ VCE (Visual .."><!-- hexo injector head_end start -->
 <ol>
 <li>
 <p>研究者用 VRX 对错误原因背后推理逻辑的解释作为修改建议，通过<strong>视觉概念（节点）的替换和删除</strong>，以及<strong>空间关系（边）的多样性扩充</strong>，原网络的错分可以被纠正。最终，VRX 将其错误总结为三种类别：</p>
-<p><img src="image-20211110185737339.png" alt=""></p>
+<p><img src="/2021/11/15/A-Peek-Into-the-Reasoning-of-Neural-Networks-Interpreting-with-Structural-Visual-Concepts/image-20211110185737339.png" alt=""></p>
 </li>
 </ol>
 <h1 id="code"><a class="markdownIt-Anchor" href="#code"></a> Code</h1>

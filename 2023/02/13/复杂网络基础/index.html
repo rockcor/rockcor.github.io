@@ -73,22 +73,22 @@ def GNL(N,L)
 <ol>
 <li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>平均度</mtext><mo>=</mo><mi>p</mi><mo stretchy="false">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">平均度=p(N-1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">平</span><span class="mord cjk_fallback">均</span><span class="mord cjk_fallback">度</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">p</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span></li>
 <li>度分布为二项分布，在较大网络中近似为泊松分布<br>
-<img src="Pasted%20image%2020230127211443.png" alt=""></li>
+<img src="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/Pasted%20image%2020230127211443.png" alt=""></li>
 <li>当N趋于无穷，度分布为泊松分布，平均距离小，集聚系数小</li>
 <li>巨连通分支规模和p的关系</li>
 </ol>
 <blockquote>
 <p>横坐标为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">pN</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">p</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>，纵坐标为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>巨连通分支节点数</mtext><mi mathvariant="normal">/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">巨连通分支节点数/N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord cjk_fallback">巨</span><span class="mord cjk_fallback">连</span><span class="mord cjk_fallback">通</span><span class="mord cjk_fallback">分</span><span class="mord cjk_fallback">支</span><span class="mord cjk_fallback">节</span><span class="mord cjk_fallback">点</span><span class="mord cjk_fallback">数</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span></p>
 </blockquote>
-<p><img src="Pasted%20image%2020230127212153.png" alt=""></p>
-<p><img src="Pasted%20image%2020230127212953.png" alt=""></p>
+<p><img src="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/Pasted%20image%2020230127212153.png" alt=""></p>
+<p><img src="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/Pasted%20image%2020230127212953.png" alt=""></p>
 <h1 id="小世界网络"><a class="markdownIt-Anchor" href="#小世界网络"></a> 小世界网络</h1>
 <p><strong>小</strong>的定义：平均距离正比于<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>n</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">lnN</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span></p>
 <h2 id="ws模型"><a class="markdownIt-Anchor" href="#ws模型"></a> WS模型</h2>
 <p>在k近邻规则网络中对边进行重连</p>
 <blockquote>
 <p>性质：随机重连前，集聚系数较高，平均距离较大；随机重连后，平均距离变小，集聚系数的降低需要更高的重连概率，越来越趋近于随机网络<br>
-<img src="Pasted%20image%2020230128144525.png" alt=""></p>
+<img src="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/Pasted%20image%2020230128144525.png" alt=""></p>
 </blockquote>
 <h2 id="nw模型"><a class="markdownIt-Anchor" href="#nw模型"></a> NW模型</h2>
 <p>在k近邻规则网络中以p的概率加边</p>
@@ -102,7 +102,7 @@ def GNL(N,L)
 <p>两头多，中间少</p>
 <blockquote>
 <p>紫色为无标度网络，绿色为随机网络（泊松分布）。度分布-双对数坐标轴。<br>
-<img src="image-20230128194302960.png" alt=""></p>
+<img src="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/image-20230128194302960.png" alt=""></p>
 </blockquote>
 <h2 id="最大度期望"><a class="markdownIt-Anchor" href="#最大度期望"></a> 最大度期望</h2>
 <p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>k</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>=</mo><msub><mi>k</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub><msup><mi>N</mi><mfrac><mn>1</mn><mrow><mi>γ</mi><mo>−</mo><mn>1</mn></mrow></mfrac></msup></mrow><annotation encoding="application/x-tex">k_{max}=k_{min}N^{\frac{1}{\gamma-1}}
@@ -112,7 +112,7 @@ def GNL(N,L)
 <li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span></span></span></span> 越大，最大度和最小度的期望差距越小</li>
 </ol>
 <h2 id="平均距离"><a class="markdownIt-Anchor" href="#平均距离"></a> 平均距离</h2>
-<p><img src="image-20230128203233246.png" alt=""></p>
+<p><img src="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/image-20230128203233246.png" alt=""></p>
 <h2 id="集聚系数-2"><a class="markdownIt-Anchor" href="#集聚系数-2"></a> 集聚系数</h2>
 <p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">⟨</mo><mi>C</mi><mo stretchy="false">⟩</mo><mo>∼</mo><mfrac><mrow><mo stretchy="false">(</mo><mi>l</mi><mi>n</mi><mi>N</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow><mi>N</mi></mfrac></mrow><annotation encoding="application/x-tex">\langle C \rangle \sim\frac{(lnN)^2}{N}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⟨</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mclose">⟩</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∼</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.177108em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.491108em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">n</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
@@ -126,13 +126,13 @@ x--y            x  y
 <ol>
 <li>网络是逐步生长的</li>
 <li>每个时间步增加m个节点，优先选择度高的节点（偏好连接）<br>
-<img src="image-20230128233914746.png" alt=""></li>
+<img src="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/image-20230128233914746.png" alt=""></li>
 </ol>
 <h2 id="非线性偏好连接"><a class="markdownIt-Anchor" href="#非线性偏好连接"></a> 非线性偏好连接</h2>
-<p><img src="image-20230128235913105.png" alt=""></p>
+<p><img src="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/image-20230128235913105.png" alt=""></p>
 <h1 id="网络鲁棒性"><a class="markdownIt-Anchor" href="#网络鲁棒性"></a> 网络鲁棒性</h1>
 <h2 id="集聚影响力collective-influence"><a class="markdownIt-Anchor" href="#集聚影响力collective-influence"></a> 集聚影响力（Collective Influence）</h2>
-<p><img src="image-20230129205022475.png" alt=""></p>
+<p><img src="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/image-20230129205022475.png" alt=""></p>
 <blockquote>
 <p>可以用偏导符号表示k阶邻居 #H2GCN</p>
 </blockquote>
