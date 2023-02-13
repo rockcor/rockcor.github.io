@@ -2,7 +2,7 @@
 <!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><link rel="stylesheet" href="/style/common/jquery.fancybox.min.css"><script src="/js/highlight.pack.js"></script><meta name="description" content="安装
 安装R-studio、R
 muxViz-3.1（无GUI）：https://github.com/manlius/muxViz
-muxViz-2.0（GUI）：https://github.com/wjj0301/Multiplex-Networks
+muxViz-2.0（GUI）：https://github.com/wjj0301/Multiplex-Networks 
 
 输入数据格式# config.txt
 
@@ -10,7 +10,6 @@ path_multilayer; path_to_layers_info; path_to_layers_layout
 # 或者每层对应一个文件
 path_layer_X; label_layer_X; path_to_layout_layer_X
 ...
-
 # layers.txt
 # 层信息
 
@@ -19,23 +18,21 @@ layerID layerLabel
 2 L2
 3 L3
 ...
-
 # .edges
-# 层内连边关系，无.."><meta name="generator" content="Hexo 5.4.2">
+# 层内连边关系，无h.."><meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 </head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Rockcor's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">muxViz 使用指南</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F"><span class="toc-text">输入数据格式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E8%BD%B4%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="toc-text">时间轴文件格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5R"><span class="toc-text">导入R</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-text">可视化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%83%E8%89%B2%E6%9D%BF"><span class="toc-text">调色板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%98%E5%9B%BE"><span class="toc-text">绘图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E6%93%8D%E4%BD%9C"><span class="toc-text">图像操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GUI"><span class="toc-text">GUI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E5%87%BA"><span class="toc-text">导出</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="toc-text">图数据分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E5%B1%82%E6%8C%87%E6%A0%87"><span class="toc-text">单层指标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%B1%82%E6%8C%87%E6%A0%87"><span class="toc-text">多层指标</span></a></li></ol></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/R"><i class="tag post-item-tag">R</i></a><a href="/tags/interpretable"><i class="tag post-item-tag">interpretable</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">muxViz 使用指南</h1><time class="has-text-grey" datetime="2021-10-18T05:44:39.000Z">2021-10-18</time><article class="mt-2 post-content"><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><ol>
 <li>安装R-studio、R</li>
 <li>muxViz-3.1（无GUI）：<a target="_blank" rel="noopener" href="https://github.com/manlius/muxViz">https://github.com/manlius/muxViz</a></li>
-<li>muxViz-2.0（GUI）：<a target="_blank" rel="noopener" href="https://github.com/wjj0301/Multiplex-Networks">https://github.com/wjj0301/Multiplex-Networks</a></li>
+<li>muxViz-2.0（GUI）：<a target="_blank" rel="noopener" href="https://github.com/wjj0301/Multiplex-Networks">https://github.com/wjj0301/Multiplex-Networks</a> </li>
 </ol>
 <h1 id="输入数据格式"><a href="#输入数据格式" class="headerlink" title="输入数据格式"></a>输入数据格式</h1><pre><code class="shell"># config.txt
 
 path_multilayer; path_to_layers_info; path_to_layers_layout
 # 或者每层对应一个文件
 path_layer_X; label_layer_X; path_to_layout_layer_X
-...
-</code></pre>
+...</code></pre>
 <pre><code class="shell"># layers.txt
 # 层信息
 
@@ -43,8 +40,7 @@ layerID layerLabel
 1 L1
 2 L2
 3 L3
-...
-</code></pre>
+...</code></pre>
 <pre><code class="shell"># .edges
 # 层内连边关系，无headline
 # 依次为 源节点ID、层ID、目标节点ID、层ID、边权值
@@ -56,8 +52,7 @@ layerID layerLabel
 # 层间连边关系，对于multiplex，节点ID相同
 1 1 1 2
 2 1 2 2
-...
-</code></pre>
+...</code></pre>
 <pre><code class="shell"># layout.txt
 # 节点信息，可选，加入此文件后，edges文件nodeID可直接换成nodeLabel
 
@@ -65,10 +60,7 @@ nodeID nodeLabel
 1 n1
 2 n2
 3 n3
-...
-</code></pre>
-<span id="more"></span>
-
+...</code></pre>
 <h2 id="时间轴文件格式"><a href="#时间轴文件格式" class="headerlink" title="时间轴文件格式"></a>时间轴文件格式</h2><p>这个模块允许在多层网络的顶部建立与动态过程相对应的动画，未尝识</p>
 <h2 id="导入R"><a href="#导入R" class="headerlink" title="导入R"></a>导入R</h2><pre><code class="R">buildMultilayerNetworkFromMuxvizFiles(
   config.file,
@@ -78,11 +70,9 @@ nodeID nodeLabel
   LayerCouplingStrength = 1,
   format = "muxviz edge-colored", # or "muxviz general"
   verbose = T
-)
-</code></pre>
+)</code></pre>
 <h1 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h1><h2 id="调色板"><a href="#调色板" class="headerlink" title="调色板"></a>调色板</h2><pre><code class="R">library(RColorBrewer)
-library(viridis)
-</code></pre>
+library(viridis)</code></pre>
 <h2 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h2><pre><code class="R">library(muxViz)
 library(igraph)
 library(rgl)
@@ -111,12 +101,12 @@ for (l in 1:Layers) {
   #双中括号提取修改元素
   g.list[[l]] &lt;- sample_sbm(Nodes, pref.matrix=block.matrix,
                             block.sizes=block.sizes)
-  
+
   #Get the list of adjacency matrices which build the multiplex
   nodeTensor[[l]] &lt;- get.adjacency(g.list[[l]])
   #定义布局方式 "fr","drl", "auto", "kk", "comp", "dh"
   lay &lt;- layoutMultiplex(g.list, layout="fr", ggplot.format=F, box=T)
-  
+
   # Show the multiplex network
   plot_multiplex3D(g.list, layer.layout=lay, layer.colors=layer.colors,
                    layer.shift.x=0.5, layer.space=2,
@@ -125,8 +115,7 @@ for (l in 1:Layers) {
                    show.aggregate=T)
   # 导出，有问题
   snapshot3d("../man/figures/multi_sbm.png", fmt = "png", width = 1024, height = 1024)
-}
-</code></pre>
+}</code></pre>
 <p><a target="_blank" rel="noopener" href="https://manlius.github.io/muxViz/reference/plot_multiplex3D.html">https://manlius.github.io/muxViz/reference/plot_multiplex3D.html</a></p>
 <h2 id="图像操作"><a href="#图像操作" class="headerlink" title="图像操作"></a>图像操作</h2><p>左键拖动整体旋转，右键按拖动方向改变各层散射角度，中键拖动缩放</p>
 <h2 id="GUI"><a href="#GUI" class="headerlink" title="GUI"></a>GUI</h2><p>linux下有问题，win下操作</p>
