@@ -53,32 +53,32 @@ def GNL(N,L)
 </code></pre>
 <h2 id="ER随机网络的性质"><a href="#ER随机网络的性质" class="headerlink" title="ER随机网络的性质"></a>ER随机网络的性质</h2><ol>
 <li>$平均度=p(N-1)$</li>
-<li>度分布为二项分布，在较大网络中近似为泊松分布<br><img src="/.com//Pasted%20image%2020230127211443.png"></li>
+<li>度分布为二项分布，在较大网络中近似为泊松分布<br><img src="/Pasted%20image%2020230127211443.png"></li>
 <li>当N趋于无穷，度分布为泊松分布，平均距离小，集聚系数小</li>
 <li>巨连通分支规模和p的关系<blockquote>
 <p>横坐标为$pN$，纵坐标为$巨连通分支节点数/N$</p>
 </blockquote>
 </li>
 </ol>
-<p><img src="/.com//Pasted%20image%2020230127212153.png"></p>
-<p><img src="/.com//Pasted%20image%2020230127212953.png"></p>
+<p><img src="/Pasted%20image%2020230127212153.png"></p>
+<p><img src="/Pasted%20image%2020230127212953.png"></p>
 <h1 id="小世界网络"><a href="#小世界网络" class="headerlink" title="小世界网络"></a>小世界网络</h1><p><strong>小</strong>的定义：平均距离正比于$lnN$</p>
 <h2 id="WS模型"><a href="#WS模型" class="headerlink" title="WS模型"></a>WS模型</h2><p>在k近邻规则网络中对边进行重连</p>
 <blockquote>
-<p>性质：随机重连前，集聚系数较高，平均距离较大；随机重连后，平均距离变小，集聚系数的降低需要更高的重连概率，越来越趋近于随机网络<br><img src="/.com//Pasted%20image%2020230128144525.png"></p>
+<p>性质：随机重连前，集聚系数较高，平均距离较大；随机重连后，平均距离变小，集聚系数的降低需要更高的重连概率，越来越趋近于随机网络<br><img src="/Pasted%20image%2020230128144525.png"></p>
 </blockquote>
 <h2 id="NW模型"><a href="#NW模型" class="headerlink" title="NW模型"></a>NW模型</h2><p>在k近邻规则网络中以p的概率加边</p>
 <h1 id="无标度（幂律）网络"><a href="#无标度（幂律）网络" class="headerlink" title="无标度（幂律）网络"></a>无标度（幂律）网络</h1><h2 id="离散形式"><a href="#离散形式" class="headerlink" title="离散形式"></a>离散形式</h2><p>$$<br>p_k=Ck^{-\gamma}<br>$$<br>$$<br>\sum_{k=1}^\infty p_k=1<br>$$</p>
 <h2 id="和随机网络的对比"><a href="#和随机网络的对比" class="headerlink" title="和随机网络的对比"></a>和随机网络的对比</h2><p>两头多，中间少</p>
 <blockquote>
-<p>紫色为无标度网络，绿色为随机网络（泊松分布）。度分布-双对数坐标轴。<br><img src="/.com//image-20230128194302960.png"></p>
+<p>紫色为无标度网络，绿色为随机网络（泊松分布）。度分布-双对数坐标轴。<br><img src="/image-20230128194302960.png"></p>
 </blockquote>
 <h2 id="最大度期望"><a href="#最大度期望" class="headerlink" title="最大度期望"></a>最大度期望</h2><p>$$<br>k_{max}=k_{min}N^{\frac{1}{\gamma-1}}<br>$$</p>
 <ol>
 <li>总节点数越大，最大度和最小度的期望差距越大</li>
 <li>$\gamma$ 越大，最大度和最小度的期望差距越小</li>
 </ol>
-<h2 id="平均距离"><a href="#平均距离" class="headerlink" title="平均距离"></a>平均距离</h2><p><img src="/.com//image-20230128203233246.png"></p>
+<h2 id="平均距离"><a href="#平均距离" class="headerlink" title="平均距离"></a>平均距离</h2><p><img src="/image-20230128203233246.png"></p>
 <h2 id="集聚系数-1"><a href="#集聚系数-1" class="headerlink" title="集聚系数"></a>集聚系数</h2><p>$$<br>\langle C \rangle \sim\frac{(lnN)^2}{N}<br>$$</p>
 <h2 id="度保持的随机化"><a href="#度保持的随机化" class="headerlink" title="度保持的随机化"></a>度保持的随机化</h2><p>nx.double_edge_swap</p>
 <pre><code>u--v            u  v
@@ -87,10 +87,10 @@ x--y            x  y
 </code></pre>
 <h1 id="BA无标度网络"><a href="#BA无标度网络" class="headerlink" title="BA无标度网络"></a>BA无标度网络</h1><ol>
 <li>网络是逐步生长的</li>
-<li>每个时间步增加m个节点，优先选择度高的节点（偏好连接）<br><img src="/.com//image-20230128233914746.png"></li>
+<li>每个时间步增加m个节点，优先选择度高的节点（偏好连接）<br><img src="/image-20230128233914746.png"></li>
 </ol>
-<h2 id="非线性偏好连接"><a href="#非线性偏好连接" class="headerlink" title="非线性偏好连接"></a>非线性偏好连接</h2><p><img src="/.com//image-20230128235913105.png"></p>
-<h1 id="网络鲁棒性"><a href="#网络鲁棒性" class="headerlink" title="网络鲁棒性"></a>网络鲁棒性</h1><h2 id="集聚影响力（Collective-Influence）"><a href="#集聚影响力（Collective-Influence）" class="headerlink" title="集聚影响力（Collective Influence）"></a>集聚影响力（Collective Influence）</h2><p><img src="/.com//image-20230129205022475.png"></p>
+<h2 id="非线性偏好连接"><a href="#非线性偏好连接" class="headerlink" title="非线性偏好连接"></a>非线性偏好连接</h2><p><img src="/image-20230128235913105.png"></p>
+<h1 id="网络鲁棒性"><a href="#网络鲁棒性" class="headerlink" title="网络鲁棒性"></a>网络鲁棒性</h1><h2 id="集聚影响力（Collective-Influence）"><a href="#集聚影响力（Collective-Influence）" class="headerlink" title="集聚影响力（Collective Influence）"></a>集聚影响力（Collective Influence）</h2><p><img src="/image-20230129205022475.png"></p>
 <blockquote>
 <p>可以用偏导符号表示k阶邻居 #H2GCN</p>
 </blockquote>
