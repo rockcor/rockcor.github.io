@@ -2,7 +2,44 @@
 <!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/widget-post-list.css"><meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Rockcor's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><span>Archives · 2023</span></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><article class="post-container is-flex is-justify-content-center section container is-max-widescreen pt-4 px-2"><div class="columns is-variable is-1-tablet is-3-desktop-only is-2-widescreen is-full-width"><section class="column"><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:26.147Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">7天 基础
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Rockcor's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><span>Archives · 2023</span></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><article class="post-container is-flex is-justify-content-center section container is-max-widescreen pt-4 px-2"><div class="columns is-variable is-1-tablet is-3-desktop-only is-2-widescreen is-full-width"><section class="column"><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/Pasted%20image%2020230127211443.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"><img class="post-cover-img js-img-fadeIn" src="/Pasted%20image%2020230127211443.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/math"><i class="tag post-item-tag">math</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">复杂网络基础</a></h2><time class="has-text-grey" datetime="2023-02-13T08:50:34.000Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">图论集聚系数
+局部集聚系数: 节点集实际连边数/理论最大连边数
+全局集聚系数: 3x三角形个数/三元组个数
+如何计算三元组个数：$C_{d_i}^2$
+
+
+
+介数节点i的介数：所有最短路径中，经过节点i的数量边ij的介数：所有最短路径中，经过边ij的数量
+核度若一个节点属于k核而不属于（k+1）核，则该节点核度为k
+随机网络ER生成算法G(N,L) vs. G(N,p)
+def GNL(N,L)
+    G=nx.Graph()
+    nlist=list(G.add_nodes_from(range(N)))
+    edge_count=0
+    while edge_count&amp;lt;L:
+        u=random.choice(nlist)
+        v=random.choice..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/image-20230211193156286.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/%E5%A4%B4%E6%9D%A1%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8E%A8%E8%8D%90%E9%A1%B9%E7%9B%AE/"><img class="post-cover-img js-img-fadeIn" src="/image-20230211193156286.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/BigData"><i class="tag post-item-tag">BigData</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2023/02/13/%E5%A4%B4%E6%9D%A1%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8E%A8%E8%8D%90%E9%A1%B9%E7%9B%AE/">头条大数据推荐项目</a></h2><time class="has-text-grey" datetime="2023-02-13T05:44:39.000Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">
+环境配置启动 hadoop、hive(连接 mysql)#~/hadoop_code/start_hive.sh
+start-all.sh
+service docker start
+docker start mysql
+hive --service metastore &amp;amp;
+
+#查看mysql
+docker exec -it mysql bash
+mysql -uroot -p
+#密码: password
+ctrl+P+Q 退出
+
+启动 hbase、spark、thriftservercd ~/bigdata
+start-hbase.sh
+./spark/sbin/start-all.sh
+hbase thrift start
+
+检查jps
+
+10948 ThriftServer
+3816 Reso..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/%E5%A4%B4%E6%9D%A1%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8E%A8%E8%8D%90%E9%A1%B9%E7%9B%AE/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:25.634Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">7天 基础
 
 推荐系统相关概念 基本算法
 推荐算法
@@ -40,7 +77,7 @@ web 对结果有明确预期
 Lambda 架构介绍
 离线计算和实时计算共同提供服务的问题
 离线计算优缺点
-优点 能够处..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day59/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/day1_%E8%AF%BE%E5%A0%82%E7%BA%AA%E8%A6%81/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:26.144Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">案例–算法实现：Item-Based CF 预测评分评分预测公式：$$pred(u,i)=\hat{r}{ui}=\cfrac{\sum{j\in I_{rated}}sim(i,j)*r_{uj}}{\sum_{j\in I_{rated}}sim(i,j)}$$
+优点 能够处..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/day1_%E8%AF%BE%E5%A0%82%E7%BA%AA%E8%A6%81/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:25.632Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">案例–算法实现：Item-Based CF 预测评分评分预测公式：$$pred(u,i)=\hat{r}{ui}=\cfrac{\sum{j\in I_{rated}}sim(i,j)*r_{uj}}{\sum_{j\in I_{rated}}sim(i,j)}$$
 算法实现
 实现评分预测方法：predict
 
@@ -56,7 +93,7 @@ def predict(uid, iid, ratings_matrix, item_similar):
     预测给定用户对给定物品的评分值
     :param uid: 用户ID
     :param iid: 物品ID
-    :param ..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day59/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/08_%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%EF%BC%9AItem-Based%20CF%20%E9%A2%84%E6%B5%8B%E8%AF%84%E5%88%86/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:26.142Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">案例–算法实现：User-Based CF 预测评分评分预测公式：$$pred(u,i)=\hat{r}{ui}=\cfrac{\sum{v\in U}sim(u,v)*r_{vi}}{\sum_{v\in U}|sim(u,v)|}$$
+    :param ..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/08_%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%EF%BC%9AItem-Based%20CF%20%E9%A2%84%E6%B5%8B%E8%AF%84%E5%88%86/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:25.630Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">案例–算法实现：User-Based CF 预测评分评分预测公式：$$pred(u,i)=\hat{r}{ui}=\cfrac{\sum{v\in U}sim(u,v)*r_{vi}}{\sum_{v\in U}|sim(u,v)|}$$
 算法实现
 实现评分预测方法：predict
 # ......
@@ -68,7 +105,7 @@ def predict(uid, iid, ratings_matrix, user_similar):
     :param iid: 物品ID
     :param ratings_matrix: 用户-物品评分矩阵
     :param user_similar: 用户两两相似度矩阵
-    :return..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day59/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/07_%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%EF%BC%9AUser-Based%20CF%20%E9%A2%84%E6%B5%8B%E8%AF%84%E5%88%86/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:26.129Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">案例–基于协同过滤的电影推荐前面我们已经基本掌握了协同过滤推荐算法，以及其中两种最基本的实现方案：User-Based CF和Item-Based CF，下面我们将利用真是的数据来进行实战演练。
+    :return..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/07_%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%EF%BC%9AUser-Based%20CF%20%E9%A2%84%E6%B5%8B%E8%AF%84%E5%88%86/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:25.619Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">案例–基于协同过滤的电影推荐前面我们已经基本掌握了协同过滤推荐算法，以及其中两种最基本的实现方案：User-Based CF和Item-Based CF，下面我们将利用真是的数据来进行实战演练。
 案例需求 演示效果
 分析案例
 数据集下载MovieLens Latest Datasets Small
@@ -79,7 +116,7 @@ def predict(uid, iid, ratings_matrix, user_similar):
 import os
 
 import pandas as pd
-imp..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day59/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/06_%E6%A1%88%E4%BE%8B--%E5%9F%BA%E4%BA%8E%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%9A%84%E7%94%B5%E5%BD%B1%E6%8E%A8%E8%8D%90/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/./img/recommend4.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/day59/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/05_%20%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E5%86%B7%E5%90%AF%E5%8A%A8%E9%97%AE%E9%A2%98/"><img class="post-cover-img js-img-fadeIn" src="/./img/recommend4.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:26.127Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">推荐系统的冷启动问题
+imp..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/06_%E6%A1%88%E4%BE%8B--%E5%9F%BA%E4%BA%8E%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%9A%84%E7%94%B5%E5%BD%B1%E6%8E%A8%E8%8D%90/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/./img/recommend4.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/05_%20%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E5%86%B7%E5%90%AF%E5%8A%A8%E9%97%AE%E9%A2%98/"><img class="post-cover-img js-img-fadeIn" src="/./img/recommend4.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:25.617Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">推荐系统的冷启动问题
 推荐系统冷启动概念
 
 ⽤户冷启动：如何为新⽤户做个性化推荐
@@ -113,7 +150,7 @@ Explore Exploit⼒度（新用户探索是保守）
 使⽤单独的特征和模型预估–新旧用户分离
 
 
-举例 ..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day59/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/05_%20%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E5%86%B7%E5%90%AF%E5%8A%A8%E9%97%AE%E9%A2%98/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/./img/algorithm1.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/day59/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/04_%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/"><img class="post-cover-img js-img-fadeIn" src="/./img/algorithm1.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:26.125Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">推荐算法
+举例 ..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/05_%20%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E5%86%B7%E5%90%AF%E5%8A%A8%E9%97%AE%E9%A2%98/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/./img/algorithm1.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/04_%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/"><img class="post-cover-img js-img-fadeIn" src="/./img/algorithm1.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:25.616Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">推荐算法
 推荐模型构建流程
 推荐算法概述
 基于协同过滤的推荐算法
@@ -148,7 +185,7 @@ Comments 评论/评价
 
 从数据中筛选特征
 一个给定的商品，可能被拥有类似品味或需求的用户购买
-使用用户行为数据描述..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day59/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/04_%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/./img/recommend2.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/day59/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/03_%20%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E8%AF%84%E4%BC%B0/"><img class="post-cover-img js-img-fadeIn" src="/./img/recommend2.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:26.119Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">二 推荐系统评估
+使用用户行为数据描述..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/04_%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/img/recommend2.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/03_%20%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E8%AF%84%E4%BC%B0/"><img class="post-cover-img js-img-fadeIn" src="/img/recommend2.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:25.609Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">二 推荐系统评估
 好的推荐系统可以实现用户, 服务提供方, 内容提供方的共赢
 
 
@@ -189,7 +226,7 @@ Comments 评论/评价
 
 准确性 (理论角度) Netflix 美国录像带租赁
 评分预测
-RMSE   MA..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day59/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/03_%20%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E8%AF%84%E4%BC%B0/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/./img/%E6%8E%A8%E8%8D%90%E6%B5%81%E7%A8%8B.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/day59/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/02_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"><img class="post-cover-img js-img-fadeIn" src="/./img/%E6%8E%A8%E8%8D%90%E6%B5%81%E7%A8%8B.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:26.118Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">二 推荐系统设计2.1 推荐系统要素
+RMSE   MA..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/03_%20%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E8%AF%84%E4%BC%B0/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/../img/%E6%8E%A8%E8%8D%90%E6%B5%81%E7%A8%8B.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/02_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"><img class="post-cover-img js-img-fadeIn" src="/../img/%E6%8E%A8%E8%8D%90%E6%B5%81%E7%A8%8B.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:25.607Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">二 推荐系统设计2.1 推荐系统要素
 UI 和 UE(前端界面)
 数据 (Lambda架构)
 业务知识
@@ -216,59 +253,7 @@ Lambda系统架构提供了一个结合实时数据和Hadoop预先计算的数�
 视图存储数据库
 nosql(HBase/Cassandra)
 Redis/memcache
-MySQL..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day59/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/02_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/./img/recommend1.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/day59/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B/"><img class="post-cover-img js-img-fadeIn" src="/./img/recommend1.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:26.116Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">一 推荐系统简介​        个性化推荐(推荐系统)经历了多年的发展，已经成为互联网产品的标配，也是AI成功落地的分支之一，在电商(淘宝/京东)、资讯(今日头条/微博)、音乐(网易云音乐/QQ音乐)、短视频(抖音/快手)等热门应用中,推荐系统都是核心组件之一。
-
-推荐系统产生背景
-
-信息过载 &amp;amp; 用户需求不明确
-分类⽬录（1990s）：覆盖少量热门⽹站。Hao123 Yahoo
-搜索引擎（2000s）：通过搜索词明确需求。Google Baidu
-推荐系统（2010s）：不需要⽤户提供明确的需求，通过分析⽤户的历史⾏为给⽤户的兴趣进⾏建模，从⽽主动给⽤户推荐能够满⾜他们兴趣和需求的信息。
-
-
-
-
-什么是推荐系统
-
-没有明确需求的用户访问了我们的服务, 且服务的物品对用户构成了信息过载, 系统通过..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day59/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><time class="has-text-grey" datetime="2023-02-13T05:36:25.634Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">7天 基础
-
-推荐系统相关概念 基本算法
-推荐算法
-原生python 实现推荐算法
-
-
-lambda架构 5天
-hadoop
-hive hbase
-spark core
-spark sql spark streaming
-案例 基于电商用户行为
-
-
-
-7天 项目
-推荐概念
-信息过滤系统 解决 信息过载 用户需求不明确的问题
-利用一定的规则将物品排序 展示给需求不明确的用户
-
-
-推荐 搜索区别
-推荐个性化较强，用户被动的接受，希望能够提供持续的服务
-搜索个性化弱，用户主动搜索，快速满足用户的需求
-
-
-推荐和 web项目区别
-构建稳定的信息流通通道
-推荐 信息过滤系统
-web 对结果有明确预期
-推荐 结果是概率问题
-
-
-
-Lambda 架构介绍
-离线计算和实时计算共同提供服务的问题
-离线计算优缺点
-优点 能够处..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/day1_%E8%AF%BE%E5%A0%82%E7%BA%AA%E8%A6%81/">Read more</a></section></article><section class="paginator is-flex is-justify-content-flex-end is-flex-wrap-wrap mt-5"><span class="page-number current">1</span><a class="page-number" href="/archives/2023/page/2/">2</a><a class="page-number" href="/archives/2023/page/3/">3</a><a class="extend next" rel="next" href="/archives/2023/page/2/"><i class="iconfont icon-next has-text-grey"></i></a></section></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container archives-widget is-in-archive-page"><h3>Archives</h3><section><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a><span class="archive-list-count">3</span></li></ul></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+MySQL..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/day01_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D/02_%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/">Read more</a></section></article><section class="paginator is-flex is-justify-content-flex-end is-flex-wrap-wrap mt-5"><span class="page-number current">1</span><a class="page-number" href="/archives/2023/page/2/">2</a><a class="extend next" rel="next" href="/archives/2023/page/2/"><i class="iconfont icon-next has-text-grey"></i></a></section></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container archives-widget is-in-archive-page"><h3>Archives</h3><section><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a><span class="archive-list-count">3</span></li></ul></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
 
 window.addEventListener('resize', $claudia.throttle(function () {
     var images = document.querySelectorAll('.js-img-fadeIn')
