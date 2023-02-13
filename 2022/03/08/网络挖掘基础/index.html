@@ -70,7 +70,7 @@ Closeness=n−1节点到所有其他节点最短路径长度之和Closeness=\fra
 </ol>
 <h2 id="案例分析-zachary空手道俱乐部"><a class="markdownIt-Anchor" href="#案例分析-zachary空手道俱乐部"></a> 案例分析-Zachary空手道俱乐部</h2>
 <p><code>nx.draw(nx.Graph())</code> 需要调用pyplot</p>
-<p><img src="image-20220307160753170.png" alt=""></p>
+<p><img src="/.com//image-20220307160753170.png" alt=""></p>
 <h2 id="度分布"><a class="markdownIt-Anchor" href="#度分布"></a> 度分布</h2>
 <pre class="highlight"><code class="python">degree_freq = nx.degree_histogram(G)
 degrees = <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(degree_freq))
@@ -80,7 +80,7 @@ plt.xlabel(<span class="hljs-string">'Degree'</span>)
 plt.ylabel(<span class="hljs-string">'Frequency'</span>)
 plt.show()
 </code></pre>
-<p><img src="image-20220308163459883.png" alt=""></p>
+<p><img src="/.com//image-20220308163459883.png" alt=""></p>
 <h2 id="幂律分布无标度网络"><a class="markdownIt-Anchor" href="#幂律分布无标度网络"></a> 幂律分布(无标度网络)</h2>
 <pre class="highlight"><code class="python">G = nx.barabasi_albert_graph(<span class="hljs-number">10000</span>, <span class="hljs-number">10</span>)
 
@@ -93,7 +93,7 @@ plt.xlabel(<span class="hljs-string">'Degree'</span>)
 plt.ylabel(<span class="hljs-string">'Frequency'</span>)
 plt.show()
 </code></pre>
-<p><img src="image-20220307161721628.png" alt=""></p>
+<p><img src="/.com//image-20220307161721628.png" alt=""></p>
 <h2 id="簇系数集聚系数"><a class="markdownIt-Anchor" href="#簇系数集聚系数"></a> 簇系数（集聚系数）</h2>
 <blockquote>
 <p>clustering coefficient</p>
@@ -112,7 +112,7 @@ g = sns.lmplot(x=<span class="hljs-string">'degrees'</span>, y=<span class="hljs
 plt.title(<span class="hljs-string">'degree-clutering'</span>)
 plt.show()
 </code></pre>
-<p><img src="image-20220307162103343.png" alt=""></p>
+<p><img src="/.com//image-20220307162103343.png" alt=""></p>
 <p>阴影表示置信区间</p>
 <h2 id="度度相关性"><a class="markdownIt-Anchor" href="#度度相关性"></a> 度度相关性</h2>
 <blockquote>
@@ -133,7 +133,7 @@ g = sns.lmplot(x=<span class="hljs-string">'degree1'</span>, y=<span class="hljs
 plt.title(<span class="hljs-string">'degree-degree'</span>)
 plt.show()
 </code></pre>
-<p><img src="image-20220307162937610.png" alt=""></p>
+<p><img src="/.com//image-20220307162937610.png" alt=""></p>
 <pre class="highlight"><code class="Python"><span class="hljs-comment"># 同配性系数</span>
 nx.degree_assortativity_coefficient(G)
 
@@ -183,7 +183,7 @@ plt.show()
     ax.set_title(<span class="hljs-string">'%.4f %s'</span> %
                  (p, <span class="hljs-string">'Connected'</span> <span class="hljs-keyword">if</span> is_connected <span class="hljs-keyword">else</span> <span class="hljs-string">'Not connected'</span>))
 </code></pre>
-<p><img src="image-20220308110330811.png" alt=""></p>
+<p><img src="/.com//image-20220308110330811.png" alt=""></p>
 <h3 id="配置网络"><a class="markdownIt-Anchor" href="#配置网络"></a> 配置网络</h3>
 <pre class="highlight"><code class="python"><span class="hljs-comment"># degree like</span>
 degrees = [d <span class="hljs-keyword">for</span> v, d <span class="hljs-keyword">in</span> G_friends.degree()]
@@ -217,7 +217,7 @@ plot_ego_network(G_random, n, axes[<span class="hljs-number">0</span>], <span cl
 
 plt.show()
 </code></pre>
-<p><img src="image-20220308112019045.png" alt=""></p>
+<p><img src="/.com//image-20220308112019045.png" alt=""></p>
 <h2 id="小世界网络"><a class="markdownIt-Anchor" href="#小世界网络"></a> 小世界网络</h2>
 <pre class="highlight"><code class="python">fig, axes = plt.subplots(figsize=(<span class="hljs-number">18</span>, <span class="hljs-number">6</span>), nrows=<span class="hljs-number">1</span>, ncols=<span class="hljs-number">3</span>)
 
@@ -238,9 +238,9 @@ axes[<span class="hljs-number">2</span>].set_title(<span class="hljs-string">'Ra
 
 plt.show()
 </code></pre>
-<p><img src="image-20220308112408375.png" alt=""></p>
-<p><img src="image-20220308122754592.png" alt=""></p>
-<p><img src="image-20220308123031740.png" alt=""></p>
+<p><img src="/.com//image-20220308112408375.png" alt=""></p>
+<p><img src="/.com//image-20220308122754592.png" alt=""></p>
+<p><img src="/.com//image-20220308123031740.png" alt=""></p>
 <p>规律：换掉的边越多，聚类系数越小，越接近随机网络；平均距离越小</p>
 <h2 id="无标度网络"><a class="markdownIt-Anchor" href="#无标度网络"></a> 无标度网络</h2>
 <p>学习资料</p>
@@ -302,12 +302,12 @@ N = <span class="hljs-number">100</span>
     
 nx.draw(G)    
 </code></pre>
-<p><img src="image-20220308165729644.png" alt="image-20220308165729644"></p>
+<p><img src="/.com//image-20220308165729644.png" alt="image-20220308165729644"></p>
 <h3 id="对无标度网络的攻击"><a class="markdownIt-Anchor" href="#对无标度网络的攻击"></a> 对无标度网络的攻击</h3>
 <blockquote>
 <p>随机移除节点 vs 蓄意移除节点</p>
 </blockquote>
-<p><img src="image-20220308170355504.png" alt=""></p>
+<p><img src="/.com//image-20220308170355504.png" alt=""></p>
 <h1 id="社团结构"><a class="markdownIt-Anchor" href="#社团结构"></a> 社团结构</h1>
 <h2 id="手动划分"><a class="markdownIt-Anchor" href="#手动划分"></a> 手动划分</h2>
 <pre class="highlight"><code class="python">G = nx.Graph()
@@ -372,7 +372,7 @@ plt.title(<span class="hljs-string">'partition2'</span>)
 
 plt.show()
 </code></pre>
-<p><img src="image-20220308180939432.png" alt=""></p>
+<p><img src="/.com//image-20220308180939432.png" alt=""></p>
 <h3 id="贪婪模块度划分"><a class="markdownIt-Anchor" href="#贪婪模块度划分"></a> 贪婪模块度划分</h3>
 <pre class="highlight"><code class="python"><span class="hljs-keyword">from</span> networkx.algorithms.community <span class="hljs-keyword">import</span> greedy_modularity_communities
 
@@ -388,7 +388,7 @@ nx.community.quality.modularity(K, optimal_partition)
 <li>重新计算网络中剩下的边的边阶数；</li>
 <li>重复(3)和(4)步骤，直到网络中的任一顶点作为一个社区为止。</li>
 </ol>
-<p><img src="image-20220308182129101.png" alt=""></p>
+<p><img src="/.com//image-20220308182129101.png" alt=""></p>
 <h1 id="补充"><a class="markdownIt-Anchor" href="#补充"></a> 补充</h1>
 <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Az4y1Q7v5?from=search&amp;seid=14361555497668642316&amp;spm_id_from=333.337.0.0">Gephi 中文教程</a></p>
 </article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2022/04/29/GNN%E6%A6%82%E8%BF%B0/" title="GNN概述"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: GNN概述</span></a><a class="button is-default" href="/2021/12/13/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E6%BC%8F%E6%B4%9E%E7%BB%BC%E8%BF%B0/" title="智能合约漏洞综述"><span class="has-text-weight-semibold">Next: 智能合约漏洞综述</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><article class="mt-6 comment-container"><script async repo="rockcor/blog-comment" src="https://utteranc.es/client.js" issue-term="pathname" theme="preferred-color-scheme"></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><a title="twitter" target="_blank" rel="noopener nofollow" href="//twitter.com//"><i class="iconfont icon-twitter"></i></a><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/rockcor"><i class="iconfont icon-github"></i></a><!-- Ins--><a title="instagram" target="_blank" rel="noopener nofollow" href="//www.instagram.com//"><i class="iconfont icon-ins"></i></a><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--><a title="facebook" target="_blank" rel="noopener nofollow" href="//www.facebook.com//"><i class="iconfont icon-tian7_facebook"></i></a></section><p><span>Copyright ©</span><span> Rockcor 2023</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script></body></html>

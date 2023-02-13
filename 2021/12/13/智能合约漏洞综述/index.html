@@ -238,7 +238,7 @@ contract WalletLibrary {
 <h3 id="全局状态与调用序列"><a class="markdownIt-Anchor" href="#全局状态与调用序列"></a> 全局状态与调用序列</h3>
 <p>每个合约都有一个长期的 Storage 存储区域，为合约存储可跨函数使用的全局变量状态。由于合约的<strong>多入口调用方式</strong>，因此在不同函数内部的变量关系、约束结果会随着全局变量进行跨函数的传递，最直接的体现特征就是特定功能或者漏洞的触发需要<strong>多笔交易组成的调用序列</strong>来完成。</p>
 <h2 id="按来源归类漏洞"><a class="markdownIt-Anchor" href="#按来源归类漏洞"></a> 按来源归类漏洞</h2>
-<p><img src="image-20211211201858358.png" alt=""></p>
+<p><img src="/.com//image-20211211201858358.png" alt=""></p>
 <h3 id="高级语言"><a class="markdownIt-Anchor" href="#高级语言"></a> 高级语言</h3>
 <ol>
 <li>变量覆盖<br>
@@ -285,7 +285,7 @@ contract WalletLibrary {
 </tr>
 </tbody>
 </table>
-<p><img src="image-20211211193109887.png" alt=""></p>
+<p><img src="/.com//image-20211211193109887.png" alt=""></p>
 <h4 id="重入"><a class="markdownIt-Anchor" href="#重入"></a> 重入</h4>
 <p>有典型重入漏洞的代码如下所示：</p>
 <pre class="highlight"><code class="solidity">	contract ERCToken{
@@ -314,7 +314,7 @@ contract WalletLibrary {
 	}
 </code></pre>
 <p>攻击者只需要通过 hack 函数调用受害合约的 withdraw 函 数，受害合约 withdraw 函数中<code>msg.sender.call.value(amount)()</code>语句执行时，会触发攻击合约中的 fallback 函数，整个攻击过程如图所示：<br>
-<img src="image-20211211221424451.png" alt=""><br>
+<img src="/.com//image-20211211221424451.png" alt=""><br>
 解决办法：</p>
 <ol>
 <li>先<code>credit[msg.sender]-=amount</code>再转账</li>
@@ -333,7 +333,7 @@ contract WalletLibrary {
 <h4 id="随机性不足"><a class="markdownIt-Anchor" href="#随机性不足"></a> 随机性不足</h4>
 <p>由于对于攻击合约和受害合约的调用都来自于攻击者发起的同一笔交易, 自然处在同一个区块中, 因此攻击合约中可以读取到和受害合约中使用的全部区块变量, 从而预测受害合约中的随机数。</p>
 <h2 id="漏洞挖掘方法"><a class="markdownIt-Anchor" href="#漏洞挖掘方法"></a> 漏洞挖掘方法</h2>
-<p><img src="image-20211212140200083.png" alt=""></p>
+<p><img src="/.com//image-20211212140200083.png" alt=""></p>
 <h3 id="模糊测试-fuzz-testing"><a class="markdownIt-Anchor" href="#模糊测试-fuzz-testing"></a> 模糊测试 Fuzz testing</h3>
 <ul>
 <li><strong>黑盒模糊测试</strong>不对程序内部结构进行分析, 而是通过生成随机输入触发程序的缺陷。</li>
@@ -353,7 +353,7 @@ contract WalletLibrary {
 智能合约与传统程序的差异主要在于合约中<strong>全局变量</strong>的取值是不确定的，因此智能合约的全局变量也需要被处理为符号值。<br>
 <a target="_blank" rel="noopener" href="https://github.com/ConsenSys/mythril">Mythril</a>: 多次符号执行增加全局变量的真实性<br>
 <a href="Manticore.pdf">Manticore</a>: 变量值具体化+多合约分析<br>
-<img src="image-20211213101229185.png" alt=""></p>
+<img src="/.com//image-20211213101229185.png" alt=""></p>
 <h3 id="形式化验证-formal-verification"><a class="markdownIt-Anchor" href="#形式化验证-formal-verification"></a> 形式化验证  Formal verification</h3>
 <p>形式化验证技术通常使用形式化的描述语言来描述一个系统的属性和特点, 为其构造出形式化规范, 再运用严格的数学逻辑证明来对其实际的运行时行为进行推理。<br>
 <a href="sp20-verx.pdf">sp20-verx</a>: 延迟谓词抽象技术将交易执行期间的符号执行信息与交易之间的抽象信息相结合</p>
@@ -362,7 +362,7 @@ contract WalletLibrary {
 <p>SASC、SmartCheck、Slither</p>
 <h3 id="污点分析"><a class="markdownIt-Anchor" href="#污点分析"></a> 污点分析</h3>
 <p>通过影子栈等方式实现更加精确的数据流分析<br>
-<img src="image-20211212211555358.png" alt=""></p>
+<img src="/.com//image-20211212211555358.png" alt=""></p>
 <h2 id="攻防"><a class="markdownIt-Anchor" href="#攻防"></a> 攻防</h2>
 <h3 id="自动化漏洞利用自动攻击"><a class="markdownIt-Anchor" href="#自动化漏洞利用自动攻击"></a> 自动化漏洞利用（自动攻击）</h3>
 <p><a href="teEther.pdf">teEther</a></p>
