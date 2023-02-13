@@ -94,17 +94,17 @@ puzzl.."><meta name="generator" content="Hexo 5.4.2">
 <li>交易列表</li>
 </ul>
 <p><strong>问题</strong>：只保存了header的轻节点如何验证一笔交易是否写入了区块链中？</p>
-<p><img src="/image-20211125141800039.png" alt="image-20211125141800039"></p>
+<p><img src="/.com//image-20211125141800039.png" alt="image-20211125141800039"></p>
 <blockquote>
 <p>只要验证当前交易所在的分支，就可以证明交易tx的存在，这称之为proof of membership/inclusion</p>
 <p>那么如何验证某个交易不存在呢？这需要获取整棵树挨个计算。更好的方案是用叶子结点按哈希值排好序。</p>
 </blockquote>
 <h2 id="全节点和轻节点"><a href="#全节点和轻节点" class="headerlink" title="全节点和轻节点"></a>全节点和轻节点</h2><p><strong>fully validationg node</strong></p>
-<p><img src="/image-20211126112329965.png"></p>
+<p><img src="/.com//image-20211126112329965.png"></p>
 <p><strong>light node</strong></p>
-<p><img src="/image-20211126112314323.png"></p>
+<p><img src="/.com//image-20211126112314323.png"></p>
 <h1 id="BTC-协议"><a href="#BTC-协议" class="headerlink" title="BTC-协议"></a>BTC-协议</h1><p>double spending attack: 一张数字货币很容易通过复制操作变两张</p>
-<p><img src="/image-20211125193750904.png"></p>
+<p><img src="/.com//image-20211125193750904.png"></p>
 <p><strong>问题</strong>：B的同伙B’知道A的公钥/地址，为什么不能冒充A</p>
 <ol>
 <li>一方面，B’如果用自己的公钥作为输入，并声明这是A的公钥。这一公钥和其来源，即A收款的输出，即A的地址，对不上</li>
@@ -133,7 +133,7 @@ puzzl.."><meta name="generator" content="Hexo 5.4.2">
 <li>longest valid chain</li>
 </ol>
 <h1 id="BTC-实现"><a href="#BTC-实现" class="headerlink" title="BTC-实现"></a>BTC-实现</h1><p>UTXO: unspent TX output</p>
-<p><img src="/image-20211125211205209.png"></p>
+<p><img src="/.com//image-20211125211205209.png"></p>
 <p>给定任何一个区块，计算当前所有的UXTO金额之和，等同于自创世区块到给定区块的挖矿奖励之和。</p>
 <p>在钱包程序中，钱包管理的是一组私钥，对应的是一组公钥和地址。钱包程序必须从创世区块开始扫描每一笔交易，如果：</p>
 <ol>
@@ -210,7 +210,7 @@ puzzl.."><meta name="generator" content="Hexo 5.4.2">
 <li>TOR 洋葱路由</li>
 </ul>
 <h2 id="Zero-knowledge-proof"><a href="#Zero-knowledge-proof" class="headerlink" title="Zero-knowledge proof"></a>Zero-knowledge proof</h2><p>A 向 B 证明一个陈述是正确的，而不必透露正确之外的内容。</p>
-<p><img src="/image-20211126183519831.png"></p>
+<p><img src="/.com//image-20211126183519831.png"></p>
 <h1 id="Ethereum-以太坊"><a href="#Ethereum-以太坊" class="headerlink" title="Ethereum 以太坊"></a>Ethereum 以太坊</h1><p>ETH最小单位wei</p>
 <p>创始人 Vitalik</p>
 <ol>
@@ -236,7 +236,7 @@ puzzl.."><meta name="generator" content="Hexo 5.4.2">
 </ol>
 <h2 id="状态树、交易树、收据树"><a href="#状态树、交易树、收据树" class="headerlink" title="状态树、交易树、收据树"></a>状态树、交易树、收据树</h2><p>modified Merkle Patricia trie</p>
 <p>recursive length profix</p>
-<p><img src="/image-20211127122117738.png"> </p>
+<p><img src="/.com//image-20211127122117738.png"> </p>
 <h2 id="GHOST"><a href="#GHOST" class="headerlink" title="GHOST"></a>GHOST</h2><p>叔父区块 7/8*3</p>
 <p>叔父区块最多有两个</p>
 <p>最长合法链如果包含叔链的交易，那么总共会获得2*1/32*3+3</p>
@@ -250,18 +250,18 @@ puzzl.."><meta name="generator" content="Hexo 5.4.2">
 <li>对验证者进行奖励和处罚，发现对两条链下注的就没收保证金</li>
 </ol>
 <h2 id="智能合约"><a href="#智能合约" class="headerlink" title="智能合约"></a>智能合约</h2><p>solidity</p>
-<p><img src="/image-20211127161431761.png"> </p>
+<p><img src="/.com//image-20211127161431761.png"> </p>
 <blockquote>
 <p>不支持hash表遍历，用一个数组保存</p>
 <p>hash表所有值初始为0</p>
 <p>不支持多线程</p>
 </blockquote>
-<p> <img src="/image-20211127163017087.png"></p>
-<p> <img src="/image-20211127163621440.png"></p>
+<p> <img src="/.com//image-20211127163017087.png"></p>
+<p> <img src="/.com//image-20211127163621440.png"></p>
 <p><strong>问题</strong>：以太坊中所有全节点都要在本地回滚自己的三棵树，并独立验证别人新发布的区块的正确性，这样得不到任何好处。他们不去验证直接认为某个新区块是正确的怎么办？</p>
 <p><strong>解决</strong>：本地必须保证三棵树的正确性才能继续往下挖，所以一定会更新</p>
-<p><img src="/image-20211127213749740.png"></p>
-<h2 id="拍卖auction"><a href="#拍卖auction" class="headerlink" title="拍卖auction"></a>拍卖auction</h2><p><img src="/image-20211127214840557.png"></p>
+<p><img src="/.com//image-20211127213749740.png"></p>
+<h2 id="拍卖auction"><a href="#拍卖auction" class="headerlink" title="拍卖auction"></a>拍卖auction</h2><p><img src="/.com//image-20211127214840557.png"></p>
 <p>code is law</p>
 <p>irrecocable trust	不可撤消的信托</p>
 <p>智能合约一定要反复测试再发布</p>

@@ -34,7 +34,7 @@
 <h2 id="2-3-Node2vec"><a href="#2-3-Node2vec" class="headerlink" title="2.3 Node2vec"></a>2.3 Node2vec</h2><p>有策略的随机游走</p>
 <p>深度优先得到节点的社团相似性（上图）</p>
 <p>广度优先得到节点的结构等价性（下图）</p>
-<p><img src="/image-20210818171416928.png"></p>
+<p><img src="/.com//image-20210818171416928.png"></p>
 <h2 id="2-4-Struc2vec"><a href="#2-4-Struc2vec" class="headerlink" title="2.4 Struc2vec"></a>2.4 Struc2vec</h2><ol>
 <li><p>计算节点n阶邻居度的序列，</p>
 </li>
@@ -44,7 +44,7 @@
 </li>
 </ol>
 <h2 id="2-5-SDNE"><a href="#2-5-SDNE" class="headerlink" title="2.5 SDNE"></a>2.5 SDNE</h2><p>采用多个非线性层捕获一阶二阶相似性</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="/image-20210818173631288.png"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="/.com//image-20210818173631288.png"></p>
 <h1 id="两类学习"><a href="#两类学习" class="headerlink" title="两类学习"></a>两类学习</h1><ul>
 <li><strong>归纳学习（Inductive Learning）：</strong> 先从训练样本中学习到一定的模式，然后利用其对测试样本进行预测（即首先从特殊到一般，然后再从一般到特殊），这类模型如常见的<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%A8%A1%E5%9E%8B&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:34232818%7D">贝叶斯模型</a>。</li>
 <li><strong>直推学习（Transductive Learning）：</strong> 先观察特定的训练样本，然后对特定的测试样本做出预测（从特殊到特殊），这类模型如k近邻、SVM等。</li>
@@ -84,7 +84,7 @@
 elif len(neighbors) &lt; self.max_degree:
     neighbors=np.random.choice(neighbors, self.max_degree, replace=True)
 </code></pre>
-<p><img src="/image-20211209161858990.png"></p>
+<p><img src="/.com//image-20211209161858990.png"></p>
 <h2 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h2><p>需要满足输入排列不变性，如</p>
 <ul>
 <li>Mean()</li>
@@ -95,19 +95,19 @@ elif len(neighbors) &lt; self.max_degree:
 <p>$$<br>Agg_k^{pool}=max({ \sigma(Wh_u^k+b)})<br>$$</p>
 <h2 id="Minibatch"><a href="#Minibatch" class="headerlink" title="Minibatch"></a>Minibatch</h2><p>即先采样把不需要用到的节点删除</p>
 <h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><p>让临近的节点拥有相似的表示，反之应该表示大不相同</p>
-<p><img src="/v2-9c473f5e242f8db158854d4e5e036b9c_r.jpg"></p>
+<p><img src="/.com//v2-9c473f5e242f8db158854d4e5e036b9c_r.jpg"></p>
 <h1 id="GAT"><a href="#GAT" class="headerlink" title="GAT"></a>GAT</h1><p>$$<br>\alpha_{ij}=\frac{exp(LeakyReLu(\vec a^T[\boldsymbol W\vec h_i\Vert \boldsymbol W\vec h_j ]))}{\sum _{k \in N_i}exp(LeakyReLu(\vec a^T[\boldsymbol W\vec h_i\Vert \boldsymbol  W \vec h_k ]))}<br>$$</p>
 <blockquote>
 <p>相当于在聚合前计算了权重。如果$\vec a$是全1向量，那么这个权重就由邻居节点各自的特征值大小决定。<br>$$<br>\vec h_i^\prime=\sigma\left(\sum_{j\in N_i}\alpha_{ij} \boldsymbol W\vec h_j\right)<br>$$</p>
 </blockquote>
 <h2 id="multi-head-attention"><a href="#multi-head-attention" class="headerlink" title="multi-head attention"></a>multi-head attention</h2><p>$$<br>\vec h_i^\prime=\sigma\left(\sum_{j\in N_i}\alpha_{ij}^k \boldsymbol W^k\vec h_j\right)<br>$$</p>
-<h1 id="PATCH-SAN"><a href="#PATCH-SAN" class="headerlink" title="PATCH-SAN"></a>PATCH-SAN</h1><h1 id="HAN"><a href="#HAN" class="headerlink" title="HAN"></a>HAN</h1><p>异构图：节点和边的类型之和大于2<br>元路径：按照某种类型pattern的路径（有向），不同的元路径揭示了不同的<strong>语义信息</strong><br>基于元路径的邻居：以某种元路径连接到节点i的所有节点<br>所以，在根据元路径邻居分配注意力的时候，可以依据不同类型的元路径分配权重<br><img src="/image-20211223171241963.png"></p>
+<h1 id="PATCH-SAN"><a href="#PATCH-SAN" class="headerlink" title="PATCH-SAN"></a>PATCH-SAN</h1><h1 id="HAN"><a href="#HAN" class="headerlink" title="HAN"></a>HAN</h1><p>异构图：节点和边的类型之和大于2<br>元路径：按照某种类型pattern的路径（有向），不同的元路径揭示了不同的<strong>语义信息</strong><br>基于元路径的邻居：以某种元路径连接到节点i的所有节点<br>所以，在根据元路径邻居分配注意力的时候，可以依据不同类型的元路径分配权重<br><img src="/.com//image-20211223171241963.png"></p>
 <h2 id="Node-level-Attention"><a href="#Node-level-Attention" class="headerlink" title="Node-level Attention"></a>Node-level Attention</h2><ol>
 <li>根据某一类型元路径，异构图转为同构图</li>
 <li>类似于GAT<br>$$<br> e_{ij}^\Phi=att_{node}(h^\prime_i,h^\prime_j;\Phi)<br>$$<br>$$<br>\alpha_{ij}^\Phi=softmax(e_{ij}^\Phi)<br>$$<br>$$<br>z_{i}^\Phi=\sigma(\sum_{j \in{\mathcal {N}}<em>i^\Phi}\alpha</em>{ij}^\Phi \cdot  h^\prime_j)<br>$$</li>
 </ol>
 <h2 id="Semantic-level-Attention"><a href="#Semantic-level-Attention" class="headerlink" title="Semantic-level Attention"></a>Semantic-level Attention</h2><p>$$<br> w_{\Phi_i}=\frac{1}{|{\mathcal{V}}|} \sum_{i\in{\mathcal{V}}}q^T\cdot\tanh(W\cdot z_i^\Phi+b)<br>$$<br>$$<br> \beta_{\Phi_i}=\frac{exp(w_{\Phi_i})}{\sum_{i=1}^Pexp(w_{\Phi_i})}<br>$$<br>$$<br> Z=\sum_{i=1}^{P}\beta_{\Phi_i}\cdot Z_{\Phi_i}<br>$$</p>
-<h1 id="GTN"><a href="#GTN" class="headerlink" title="GTN"></a>GTN</h1><p><img src="/image-20211223194418292.png"></p>
+<h1 id="GTN"><a href="#GTN" class="headerlink" title="GTN"></a>GTN</h1><p><img src="/.com//image-20211223194418292.png"></p>
 <ol>
 <li>用$D^{-1}Q_1Q_2$归一化</li>
 <li>为了保留图本身的性质，给点边关系集增加一个单位阵$I$这样和A相乘时还是A。</li>
@@ -123,8 +123,8 @@ elif len(neighbors) &lt; self.max_degree:
 </blockquote>
 <h1 id="GATNE"><a href="#GATNE" class="headerlink" title="GATNE"></a>GATNE</h1><ol>
 <li>相比metapath2vec，增加了边类型不同的情况</li>
-<li>base-embedding+edge-embedding<br><img src="/image-20211226200105763.png"><blockquote>
-<p>用函数逼近器得到归纳学习的效果<br><img src="/image-20211226204804890.png"></p>
+<li>base-embedding+edge-embedding<br><img src="/.com//image-20211226200105763.png"><blockquote>
+<p>用函数逼近器得到归纳学习的效果<br><img src="/.com//image-20211226204804890.png"></p>
 </blockquote>
 </li>
 </ol>
