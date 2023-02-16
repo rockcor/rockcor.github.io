@@ -16,12 +16,11 @@ select 列名 from 表名 where id in (结果是一列的sql语句);
 
  select * from students from students where (height,age) = (select max(height),max(age) from students)
 
-
  窗口函数
 
 使用后形状不变，类似于pandas里的transform()
 
-select *,rank() .."><!-- hexo injector head_end start -->
+select *,rank() o.."><!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
@@ -45,7 +44,6 @@ select *,rank() .."><!-- hexo injector head_end start -->
 </blockquote>
 <pre class="highlight"><code class="sql"> <span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> students <span class="hljs-keyword">from</span> students <span class="hljs-keyword">where</span> (height,age) <span class="hljs-operator">=</span> (<span class="hljs-keyword">select</span> <span class="hljs-built_in">max</span>(height),<span class="hljs-built_in">max</span>(age) <span class="hljs-keyword">from</span> students)
 </code></pre>
-<span id="more"></span>
 <h1 id="窗口函数"><a class="markdownIt-Anchor" href="#窗口函数"></a> 窗口函数</h1>
 <blockquote>
 <p>使用后形状不变，类似于pandas里的transform()</p>
