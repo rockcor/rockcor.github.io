@@ -17,11 +17,11 @@ hexo clean &amp;amp;&amp;amp; hexo g &amp;amp;&amp;amp; hexo d
 
 
 
-多行公式分块，行内公式不能有空格。
+行内公式不能有空格。
 
 
  主力换 win11 后的更新
-换主题 hexo-theme-Claudia/README-CN..."><!-- hexo injector head_end start -->
+换主题 hexo-theme-Claudia/README-CN.md at m.."><!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
@@ -46,7 +46,7 @@ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
 </blockquote>
 </li>
 <li>
-<p>多行公式分块，行内公式不能有空格。</p>
+<p>行内公式不能有空格。</p>
 </li>
 </ol>
 <h1 id="主力换-win11-后的更新"><a class="markdownIt-Anchor" href="#主力换-win11-后的更新"></a> 主力换 win11 后的更新</h1>
@@ -112,7 +112,7 @@ npm install hexo-asset-img --save
 <a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/third-party-services/math-equations">Math Equations | NexT</a></p>
 <h3 id="方案二别的主题hexo-renderer-markdown-it-plusobsidian"><a class="markdownIt-Anchor" href="#方案二别的主题hexo-renderer-markdown-it-plusobsidian"></a> 方案二：别的主题+hexo-renderer-markdown-it-plus+obsidian</h3>
 <p>这个版本不用next了，window对pandoc支持可能也有问题，安装时候报错。<br>
-查了半天资料，得出结论：必须在渲染时改为<code>{%xxx.jpg%}</code>格式，渲染前图片仅使用文件名，且hexo配置文件中<code>post_asset_folder: true</code>。<br>
+查了半天资料，得出结论：<strong>必须在渲染时改为<code>{%xxx.jpg%}</code>格式，渲染前图片仅使用文件名，且hexo配置文件中<code>post_asset_folder: true</code>。</strong><br>
 实现该功能的npm包<code>hexo-asset-image</code>已失效。由于这个功能时普遍的需求，懒得自己改源码，去npm官网搜索新的轮子。<br>
 使用 npm 包：<code>hexo-asset-img</code></p>
 <blockquote>
