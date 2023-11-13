@@ -42,11 +42,11 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>生日札记</title>
     <link href="http://example.com/2023/04/06/%E7%94%9F%E6%97%A5%E6%9C%AD%E8%AE%B0/"/>
     <id>http://example.com/2023/04/06/%E7%94%9F%E6%97%A5%E6%9C%AD%E8%AE%B0/</id>
     <published>2023-04-06T08:32:07.483Z</published>
-    <updated>2023-11-13T11:17:37.361Z</updated>
+    <updated>2023-11-13T12:14:32.372Z</updated>
     
     <content type="html"><![CDATA[<p>今天是我的生日，但我一点都开心不起来。身边的朋友寥寥，他们对我是否生日并不以为意，而是觉得游戏更重要。然而，人生的意义在于付出，这些冷漠并不影响我对他们的好。<br>回顾17-25这9年，我个人的成长其实以三年为一个周期。高二高三大一，上升期生物竞赛省队培训和进入大学社团的失败预示了第二阶段的下降。大二大三大四，完全的下降期，毕业设计有上升之势。二战研一研二，上升期，但是暂不及之前的水平。如今恰又在三年的末尾，理应集三年上升之力冲刺。<br>然而，焦虑成了最近年轻人的主旋律。我给自己安排大量的事，边做边抬头仰望，觉得脖子不够酸再换一个目标去仰望。这样时间久了真的太累了。上一个三年，我的学习策略是罪恶感驱动。这个三年，我走了另一个极端。不变的是，我依旧坚持心理问题是主要矛盾。这个坚持的好处是，可以始终保持对能力的自信。</p>]]></content>
     
@@ -59,6 +59,12 @@
     
     
     
+    <category term="freetime" scheme="http://example.com/categories/freetime/"/>
+    
+    
+    <category term="life" scheme="http://example.com/tags/life/"/>
+    
+    <category term="总结" scheme="http://example.com/tags/%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
