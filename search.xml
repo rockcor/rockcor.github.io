@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>HomoGCL: Rethinking Homophily in Graph Contrastive Learning</title>
+      <link href="/2023/11/16/HomoGCL/"/>
+      <url>/2023/11/16/HomoGCL/</url>
+      
+        <content type="html"><![CDATA[<h1 id="motivation"><a class="markdownIt-Anchor" href="#motivation"></a> Motivation</h1><ol><li>What causes the huge gap between the performance declines of<br>GCL and VCL when data augmentation is not leveraged?<br><img src="/2023/11/16/HomoGCL/image-20231114223944951.png" alt=""></li></ol><p>全文故事围绕和 CV 的对比展开<br>2. Node near the boundary of classes can be false positive<br>3. The message passing has only the similarities between two far nodes reduced<br><img src="/2023/11/16/HomoGCL/image-20231115103532008.png" alt=""></p><blockquote><p>CV 中没有消息传递，如果没有增强，就会导致平凡解（过快收敛）</p><p>消息传递利用了同质性，把邻居负样本又拉近了，阻碍了对比学习中的负样本拉远，从而避免了平凡解</p><p>显示地利用邻居作为正样本，和 N2N 不同的是，这里使用了 soft assignment 按类拉近，并降低了跨类边的权重。</p></blockquote><h1 id="method"><a class="markdownIt-Anchor" href="#method"></a> Method</h1><p><img src="/2023/11/16/HomoGCL/image-20231115102058834.png" alt=""></p><h2 id="soft-clustering"><a class="markdownIt-Anchor" href="#soft-clustering"></a> soft clustering</h2><p><img src="/2023/11/16/HomoGCL/image-20231115110134969.png" alt=""><br><img src="/2023/11/16/HomoGCL/image-20231115110948611.png" alt=""></p><p>The saliency matrix find the edge between V4 and V5</p><h2 id="redefine-pos-neg"><a class="markdownIt-Anchor" href="#redefine-pos-neg"></a> redefine pos &amp; neg</h2><p><img src="/2023/11/16/HomoGCL/image-20231115110457897.png" alt=""></p><ol><li>Add intra-view positive pairs by soft clustering</li><li>Remove neighbours from negative pairs</li></ol><h2 id="homo-loss-from-jin"><a class="markdownIt-Anchor" href="#homo-loss-from-jin"></a> Homo Loss from Jin</h2><p><img src="/2023/11/16/HomoGCL/image-20231115111708621.png" alt=""></p><h1 id="experiments"><a class="markdownIt-Anchor" href="#experiments"></a> Experiments</h1><p><img src="/2023/11/16/HomoGCL/image-20231115110542349.png" alt=""></p><h1 id="review"><a class="markdownIt-Anchor" href="#review"></a> Review</h1><p>微弱提升</p><p>异质图怎么说</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> homophily </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>英国之旅</title>
       <link href="/2023/10/27/%E8%8B%B1%E5%9B%BD%E4%B9%8B%E6%97%85/"/>
       <url>/2023/10/27/%E8%8B%B1%E5%9B%BD%E4%B9%8B%E6%97%85/</url>
@@ -628,9 +647,9 @@
       
         <tags>
             
-            <tag> linux </tag>
-            
             <tag> manjaro </tag>
+            
+            <tag> linux </tag>
             
         </tags>
       
