@@ -6,113 +6,50 @@
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Rockcor's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><span>Archives · All</span></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><article class="post-container is-flex is-justify-content-center section container is-max-widescreen pt-4 px-2"><div class="columns is-variable is-1-tablet is-3-desktop-only is-2-widescreen is-full-width"><section class="column"><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/Pasted%20image%2020230127211443.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"><img class="post-cover-img js-img-fadeIn" src="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/Pasted%20image%2020230127211443.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/math"><i class="tag post-item-tag">math</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">复杂网络基础</a></h2><time class="has-text-grey" datetime="2023-02-13T08:50:34.000Z">2023-02-13</time><p class="is-flex-grow-2 mt-2"> 图论
- 集聚系数
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Rockcor's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><span>Archives · All</span></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><article class="post-container is-flex is-justify-content-center section container is-max-widescreen pt-4 px-2"><div class="columns is-variable is-1-tablet is-3-desktop-only is-2-widescreen is-full-width"><section class="column"><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/python"><i class="tag post-item-tag">python</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2023/02/13/%E7%8E%8B%E9%81%93Python%E7%AC%94%E8%AE%B0/">王道Python笔记</a></h2><time class="has-text-grey" datetime="2023-02-13T05:36:25.499Z">2023-02-13</time><p class="is-flex-grow-2 mt-2"> day2
+现在的服务器，硬件追求性价比，可靠性用软件保证
+系统级进程用数个无密码用户启动，互相独立
+#给root配置密码
+sudo passwd root
 
-局部集聚系数: 节点集实际连边数/理论最大连边数
-全局集聚系数: 3x三角形个数/三元组个数
+useradd -m ... -s /bin/bash
 
+userdel -r
 
-如何计算三元组个数：Cdi2C_{d_i}^2Cdi​2​
-
- 介数
-节点i的介数：所有最短路径中，经过节点i的数量
-边ij的介数：所有最短路径中，经过边ij的数量
- 核度
-若一个节点属于k核而不属于（k+1）核，则该节点核度为k
- 随机网络
- ER生成算法
-G(N,L) vs. G(N,p)
-def GNL(N,L)
-	G=nx.Graph()
-	nlist=list(G.add_nodes_from(range(N)))
-	edge_count=0
-	while edge_count&amp;lt;L:
-		u=random.choice(nlist)
-		v=random.choice(nl..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2023/02/13/%E5%A4%B4%E6%9D%A1%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8E%A8%E8%8D%90%E9%A1%B9%E7%9B%AE/image-20230211193156286.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/%E5%A4%B4%E6%9D%A1%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8E%A8%E8%8D%90%E9%A1%B9%E7%9B%AE/"><img class="post-cover-img js-img-fadeIn" src="/2023/02/13/%E5%A4%B4%E6%9D%A1%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8E%A8%E8%8D%90%E9%A1%B9%E7%9B%AE/image-20230211193156286.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/BigData"><i class="tag post-item-tag">BigData</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2023/02/13/%E5%A4%B4%E6%9D%A1%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8E%A8%E8%8D%90%E9%A1%B9%E7%9B%AE/">头条大数据推荐项目</a></h2><time class="has-text-grey" datetime="2023-02-13T05:44:39.000Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">
- 环境配置
- 启动 hadoop、hive(连接 mysql)
-#~/hadoop_code/start_hive.sh
-start-all.sh
-service docker start
-docker start mysql
-hive --service metastore &amp;amp;
-
-#查看mysql
-docker exec -it mysql bash
-mysql -uroot -p
-#密码: password
-ctrl+P+Q 退出
-
- 启动 hbase、spark、thriftserver
-cd ~/bigdata
-start-hbase.sh
-./spark/sbin/start-all.sh
-hbase thrift start
-
- 检查
-jps
-
-10948 ThriftServer
-3..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/%E5%A4%B4%E6%9D%A1%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8E%A8%E8%8D%90%E9%A1%B9%E7%9B%AE/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2023/02/11/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/image-20230201202112535.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/11/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/"><img class="post-cover-img js-img-fadeIn" src="/2023/02/11/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/image-20230201202112535.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/BigData"><i class="tag post-item-tag">BigData</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2023/02/11/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/">大数据框架简介</a></h2><time class="has-text-grey" datetime="2023-02-11T05:44:39.000Z">2023-02-11</time><p class="is-flex-grow-2 mt-2"> Hadoop：分布式系统框架
-
- HDFS：分布式文件系统
+ linux通配
 
 
-TIP: HDFS中的block大小为64MB，默认保存3份
-
- YARN：分布式资源调度器
-核心思想：JobTracker和TaskTacker进行分离
-
-包含ResourceManager，ApplicationMaster，Nodemanager，Container，Client
- MapReduce：分布式计算框架
-
-</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/11/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2022/04/29/GNN%E6%A6%82%E8%BF%B0/image-20210818171416928.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2022/04/29/GNN%E6%A6%82%E8%BF%B0/"><img class="post-cover-img js-img-fadeIn" src="/2022/04/29/GNN%E6%A6%82%E8%BF%B0/image-20210818171416928.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/Graph"><i class="tag post-item-tag">Graph</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2022/04/29/GNN%E6%A6%82%E8%BF%B0/">GNN概述</a></h2><time class="has-text-grey" datetime="2022-04-29T10:19:16.000Z">2022-04-29</time><p class="is-flex-grow-2 mt-2"> Graph embedding
- 2.1 deepwalk
-从某个节点出发随机游走，得到若干个序列，用skip-gram计算每个节点的embedding信息
- 2.2 LINE
-一阶相似性：直接相连的两节点相似
-二阶相似性：有大量共同邻居的两个不相连节点相似
-相似度高的节点会在embedding后有更短的欧氏距离
-一阶和二阶直接拼接为节点的向量
- 2.3 Node2vec
-有策略的随机游走
-深度优先得到节点的社团相似性（上图）
-广度优先得到节点的结构等价性（下图）
-
- 2.4 Struc2vec
 
 
-计算节点n阶邻居度的序列，
+基本规则
+说明
 
 
-求两序列的相似度
 
 
-得到两节点的结构相似性
+grep
+输出含匹配段的行，首尾规则
+! [] ^ $ * ?
 
 
- 2.5 SDNE
-采用多个非线性层捕获一阶二阶相似性
- 总结
+find/shell/rm等
+输出文件路径，无首尾规则，加-name，加引号
+! [] *(同.*) .
 
- 两类学习
 
-归纳学习（Inductive Learning..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2022/04/29/GNN%E6%A6%82%E8%BF%B0/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2022/03/08/%E7%BD%91%E7%BB%9C%E6%8C%96%E6%8E%98%E5%9F%BA%E7%A1%80/image-20220307160753170.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2022/03/08/%E7%BD%91%E7%BB%9C%E6%8C%96%E6%8E%98%E5%9F%BA%E7%A1%80/"><img class="post-cover-img js-img-fadeIn" src="/2022/03/08/%E7%BD%91%E7%BB%9C%E6%8C%96%E6%8E%98%E5%9F%BA%E7%A1%80/image-20220307160753170.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/Graph"><i class="tag post-item-tag">Graph</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2022/03/08/%E7%BD%91%E7%BB%9C%E6%8C%96%E6%8E%98%E5%9F%BA%E7%A1%80/">网络挖掘基础</a></h2><time class="has-text-grey" datetime="2022-03-08T11:56:36.000Z">2022-03-08</time><p class="is-flex-grow-2 mt-2"> 图的性质
- 度中心性
-Di=Nin−1D_i=\frac{N_i}{n-1}
-Di​=n−1Ni​​
-DiD_iDi​: i 结点的度中心性
-NiN_iNi​: i 结点的度
-n: 结点数量
- 特征向量中心性
-邻接矩阵的最大特征值对应的特征向量，给出了每个节点重要程度的度量
- 中介中心性
-Betweenness=经过该节点的最短路径数目(n−2)(n−1)Betweenness=\frac{经过该节点的最短路径数目}{(n-2)(n-1)}
-Betweenness=(n−2)(n−1)经过该节点的最短路径数目​
-如果两节点出现两条最短路径，经过目标节点的路径权值减半。
- 连接中心性
-Closeness=n−1节点到所有其他节点最短路径长度之和Closeness=\frac{n-1}{节点到所有其他节点最短..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2022/03/08/%E7%BD%91%E7%BB%9C%E6%8C%96%E6%8E%98%E5%9F%BA%E7%A1%80/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2021/12/13/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E6%BC%8F%E6%B4%9E%E7%BB%BC%E8%BF%B0/image-20211211201858358.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/12/13/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E6%BC%8F%E6%B4%9E%E7%BB%BC%E8%BF%B0/"><img class="post-cover-img js-img-fadeIn" src="/2021/12/13/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E6%BC%8F%E6%B4%9E%E7%BB%BC%E8%BF%B0/image-20211211201858358.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/Blockchain"><i class="tag post-item-tag">Blockchain</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/12/13/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E6%BC%8F%E6%B4%9E%E7%BB%BC%E8%BF%B0/">智能合约漏洞综述</a></h2><time class="has-text-grey" datetime="2021-12-13T04:02:57.000Z">2021-12-13</time><p class="is-flex-grow-2 mt-2">
+
+ day4
+安装ipython3
+复数 complex(a,b) .real/imag
+命名规范：
+
+常量全大写，可加下划线
+变量、方法用下划线命名法
+类名用大驼峰命名法
+
+float类型17位精度
+1 and 3 =3 真则返回后一个
+5 o..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/%E7%8E%8B%E9%81%93Python%E7%AC%94%E8%AE%B0/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2023/02/13/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E6%BC%8F%E6%B4%9E%E7%BB%BC%E8%BF%B0/image-20211211201858358.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E6%BC%8F%E6%B4%9E%E7%BB%BC%E8%BF%B0/"><img class="post-cover-img js-img-fadeIn" src="/2023/02/13/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E6%BC%8F%E6%B4%9E%E7%BB%BC%E8%BF%B0/image-20211211201858358.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/Blockchain"><i class="tag post-item-tag">Blockchain</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2023/02/13/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E6%BC%8F%E6%B4%9E%E7%BB%BC%E8%BF%B0/">智能合约漏洞综述</a></h2><time class="has-text-grey" datetime="2023-02-13T05:36:25.497Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">
 链接打不开是我的本地 pdf，自己搜论文
 
  paper
@@ -167,7 +104,147 @@ KotET 合约拒绝服务
  第一次 parity
 contract WalletLibrary {
      address owner;
- ..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/12/13/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E6%BC%8F%E6%B4%9E%E7%BB%BC%E8%BF%B0/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2021/12/04/%E5%8C%97%E5%A4%A7%E8%82%96%E8%87%BB%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20211125141800039.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/12/04/%E5%8C%97%E5%A4%A7%E8%82%96%E8%87%BB%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/"><img class="post-cover-img js-img-fadeIn" src="/2021/12/04/%E5%8C%97%E5%A4%A7%E8%82%96%E8%87%BB%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20211125141800039.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/Blockchain"><i class="tag post-item-tag">Blockchain</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/12/04/%E5%8C%97%E5%A4%A7%E8%82%96%E8%87%BB%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/">北大肖臻区块链技术与应用</a></h2><time class="has-text-grey" datetime="2021-12-04T07:34:45.000Z">2021-12-04</time><p class="is-flex-grow-2 mt-2">
+ ..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E6%BC%8F%E6%B4%9E%E7%BB%BC%E8%BF%B0/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2023/02/13/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E9%98%B6/UVwajev8FuK9QzW.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E9%98%B6/"><img class="post-cover-img js-img-fadeIn" src="/2023/02/13/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E9%98%B6/UVwajev8FuK9QzW.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/SQL"><i class="tag post-item-tag">SQL</i></a><a href="/tags/MySQL"><i class="tag post-item-tag">MySQL</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2023/02/13/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E9%98%B6/">数据库进阶</a></h2><time class="has-text-grey" datetime="2023-02-13T05:36:25.493Z">2023-02-13</time><p class="is-flex-grow-2 mt-2"> 子查询
+ 标量子查询
+-- 子查询是结果是一个值
+select * from students where age &amp;gt; (select avg(age) from students);
+
+ 列级子查询
+
+返回的结果是一列(一列多行)
+
+select 列名 from 表名 where id in (结果是一列的sql语句);
+
+ 行级子查询
+
+和标量差不多，区别是子查询结果是一行多列
+
+ select * from students from students where (height,age) = (select max(height),max(age) from students)
+
+ 窗口函数
+
+使用后形状不变，类似于pandas里的transform()
+
+select *,rank() o..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9B%E9%98%B6/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/SQL"><i class="tag post-item-tag">SQL</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2023/02/13/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/">数据库入门</a></h2><time class="has-text-grey" datetime="2023-02-13T05:36:25.491Z">2023-02-13</time><p class="is-flex-grow-2 mt-2"> SQL语法
+注：' ' 指数字或字符串
+
+查询比较重要，占业务的绝大多数，创建放后面
+
+ SELECT
+SELECT 字段 FROM 表;
+SELECT * FROM 表;
+SELECT DISTINCT 字段 FROM 表;
+
+ TOP
+SELECT TOP 记录数 * FROM 表;
+SELECT TOP 百分数 PERSENT FROM 表;
+
+ WHERE
+SELECT * FROM 表 WHERE 字段+运算符+' ';
+SELECT * FROM 表 WHERE (字段A=' ' OR 字段A=' ') AND 列B=' ';
+SELECT * FROM 表 WHERE 字段A&amp;lt;&amp;gt;' ' OR 字段A is null;
+SELECT * FROM 表 WHERE 字段A&amp;gt;AL..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%85%A5%E9%97%A8/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2023/02/13/%E5%A4%B4%E6%9D%A1%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8E%A8%E8%8D%90%E9%A1%B9%E7%9B%AE/image-20230211193156286.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/%E5%A4%B4%E6%9D%A1%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8E%A8%E8%8D%90%E9%A1%B9%E7%9B%AE/"><img class="post-cover-img js-img-fadeIn" src="/2023/02/13/%E5%A4%B4%E6%9D%A1%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8E%A8%E8%8D%90%E9%A1%B9%E7%9B%AE/image-20230211193156286.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/BigData"><i class="tag post-item-tag">BigData</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2023/02/13/%E5%A4%B4%E6%9D%A1%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8E%A8%E8%8D%90%E9%A1%B9%E7%9B%AE/">头条大数据推荐项目</a></h2><time class="has-text-grey" datetime="2023-02-13T05:36:25.488Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">
+ 环境配置
+ 启动 hadoop、hive(连接 mysql)
+#~/hadoop_code/start_hive.sh
+start-all.sh
+service docker start
+docker start mysql
+hive --service metastore &amp;amp;
+
+#查看mysql
+docker exec -it mysql bash
+mysql -uroot -p
+#密码: password
+ctrl+P+Q 退出
+
+ 启动 hbase、spark、thriftserver
+cd ~/bigdata
+start-hbase.sh
+./spark/sbin/start-all.sh
+hbase thrift start
+
+ 检查
+jps
+
+10948 ThriftServer
+3..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/%E5%A4%B4%E6%9D%A1%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8E%A8%E8%8D%90%E9%A1%B9%E7%9B%AE/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2023/02/13/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/image-20230201202112535.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/"><img class="post-cover-img js-img-fadeIn" src="/2023/02/13/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/image-20230201202112535.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/BigData"><i class="tag post-item-tag">BigData</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2023/02/13/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/">大数据框架简介</a></h2><time class="has-text-grey" datetime="2023-02-13T05:36:25.486Z">2023-02-13</time><p class="is-flex-grow-2 mt-2"> Hadoop：分布式系统框架
+
+ HDFS：分布式文件系统
+
+
+TIP: HDFS中的block大小为64MB，默认保存3份
+
+ YARN：分布式资源调度器
+核心思想：JobTracker和TaskTacker进行分离
+
+包含ResourceManager，ApplicationMaster，Nodemanager，Container，Client
+ MapReduce：分布式计算框架
+
+</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9E%B6%E7%AE%80%E4%BB%8B/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/languages"><i class="tag post-item-tag">languages</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2023/02/13/%E5%A4%A7%E5%AE%B6%E7%9A%84%E6%97%A5%E8%AF%AD%E5%88%9D%E7%BA%A7%E4%B8%8A/">大家的日语初级上</a></h2><time class="has-text-grey" datetime="2023-02-13T05:36:25.485Z">2023-02-13</time><p class="is-flex-grow-2 mt-2"> 皆さんの日本語　初級上
+
+覚えにくい、より難しい知識
+
+ 単語
+教室　きょうしつ
+授業　じゅぎょう
+橋／箸　はし
+平仮名　ひえあがな
+片仮名　カタカナ
+手伝う　てつだう
+買い物する
+沖縄　おきなわ
+市役所　しやくしょ
+役に立つ　やくにたつ
+間　あいだ
+集める　あつめる
+意見　いけん
+田舎　いなか
+要る　いる
+後ろ　うしろ
+上着　うわぎ
+動く　うごく
+家内＝妻
+音楽　おんがく
+確認　かくにん
+角　かど
+生活　せいかつ
+洗濯　せんたく
+自動販売機　じどうはんばいき
+地図　ちず
+地球　ちきゅう
+地下鉄　ちかてつ
+調子　ちょうし
+だんだん増（ふ）える
+ 外来語
+インターネット	Internet
+エスカレータ　escalator
+ 数词特辑
+0.1	れいてんいち　1/10	じゅうぶんのいち
+三百	さんびゃく　六百　..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/%E5%A4%A7%E5%AE%B6%E7%9A%84%E6%97%A5%E8%AF%AD%E5%88%9D%E7%BA%A7%E4%B8%8A/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/Pasted%20image%2020230127211443.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"><img class="post-cover-img js-img-fadeIn" src="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/Pasted%20image%2020230127211443.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/math"><i class="tag post-item-tag">math</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">复杂网络基础</a></h2><time class="has-text-grey" datetime="2023-02-13T05:36:25.483Z">2023-02-13</time><p class="is-flex-grow-2 mt-2"> 图论
+ 集聚系数
+
+局部集聚系数: 节点集实际连边数/理论最大连边数
+全局集聚系数: 3x三角形个数/三元组个数
+
+
+如何计算三元组个数：Cdi2C_{d_i}^2Cdi​2​
+
+ 介数
+节点i的介数：所有最短路径中，经过节点i的数量
+边ij的介数：所有最短路径中，经过边ij的数量
+ 核度
+若一个节点属于k核而不属于（k+1）核，则该节点核度为k
+ 随机网络
+ ER生成算法
+G(N,L) vs. G(N,p)
+def GNL(N,L)
+	G=nx.Graph()
+	nlist=list(G.add_nodes_from(range(N)))
+	edge_count=0
+	while edge_count&amp;lt;L:
+		u=random.choice(nlist)
+		v=random.choice(nl..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/%E5%A4%8D%E6%9D%82%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2023/02/13/%E5%8C%97%E5%A4%A7%E8%82%96%E8%87%BB%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20211125141800039.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/%E5%8C%97%E5%A4%A7%E8%82%96%E8%87%BB%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/"><img class="post-cover-img js-img-fadeIn" src="/2023/02/13/%E5%8C%97%E5%A4%A7%E8%82%96%E8%87%BB%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/image-20211125141800039.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/Blockchain"><i class="tag post-item-tag">Blockchain</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2023/02/13/%E5%8C%97%E5%A4%A7%E8%82%96%E8%87%BB%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/">北大肖臻区块链技术与应用</a></h2><time class="has-text-grey" datetime="2023-02-13T05:36:25.481Z">2023-02-13</time><p class="is-flex-grow-2 mt-2">
 记得比较琐碎，以太坊部分待补充完整
 
  BTC-密码学原理
@@ -189,52 +266,9 @@ hiding	隐匿性
 
 ​	H(x)难以反推x，只能用暴力破解
 ​	**条件：**x的样本空间足够大且分布均匀
-..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/12/04/%E5%8C%97%E5%A4%A7%E8%82%96%E8%87%BB%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2021/11/15/A-Peek-Into-the-Reasoning-of-Neural-Networks-Interpreting-with-Structural-Visual-Concepts/image-20211110153323457.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/11/15/A-Peek-Into-the-Reasoning-of-Neural-Networks-Interpreting-with-Structural-Visual-Concepts/"><img class="post-cover-img js-img-fadeIn" src="/2021/11/15/A-Peek-Into-the-Reasoning-of-Neural-Networks-Interpreting-with-Structural-Visual-Concepts/image-20211110153323457.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/CV"><i class="tag post-item-tag">CV</i></a><a href="/tags/GNN"><i class="tag post-item-tag">GNN</i></a><a href="/tags/Interpretability"><i class="tag post-item-tag">Interpretability</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/11/15/A-Peek-Into-the-Reasoning-of-Neural-Networks-Interpreting-with-Structural-Visual-Concepts/">A Peek Into the Reasoning of Neural Networks Interpreting with Structural Visual Concepts</a></h2><time class="has-text-grey" datetime="2021-11-15T09:05:32.000Z">2021-11-15</time><p class="is-flex-grow-2 mt-2">
-#CVPR2021
-难度：⭐
-文章地址：https://arxiv.org/abs/2105.00290
-PPT：https://www.youtube.com/watch?v=ZzkpUrK-cRA
-code: https://github.com/gyhandy/Visual-Reasoning-eXplanation
-
- Idea
-框架名：VRX, visual reasoning explanation
-
-提取比特征更高阶的：视觉概念
-按概念之间的关系组成有向有权图
-用 GNN 聚合图结构信息，给出为什么这样预测和为什么不预测成别的标签的解释
-副产品：可以给出预测错误的原因
-
- Framework
-
-
-VCE (Visual Concept Extractor) : Grad-Cam 的 atte..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/11/15/A-Peek-Into-the-Reasoning-of-Neural-Networks-Interpreting-with-Structural-Visual-Concepts/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2021/11/02/GAN%E5%88%9D%E8%AF%86/2019-07-15-124947.jpg" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2021/11/02/GAN%E5%88%9D%E8%AF%86/"><img class="post-cover-img js-img-fadeIn" src="/2021/11/02/GAN%E5%88%9D%E8%AF%86/2019-07-15-124947.jpg" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/GAN"><i class="tag post-item-tag">GAN</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/11/02/GAN%E5%88%9D%E8%AF%86/">GAN初识</a></h2><time class="has-text-grey" datetime="2021-11-02T14:25:35.000Z">2021-11-02</time><p class="is-flex-grow-2 mt-2"> 简介
-生成对抗网络，Generative Adversarial Network (GAN) , 发明于2014年，是一种无监督学习的方法。最初的GAN由一个生成器和一个判别器组成：生成器把噪声作为输入，尽可能生成以假乱真的样本；判别器以真实样本和生成样本作为输入，输出样本真假判断的结果。最终能从训练好的生成器中输出高质量的，甚至超过真实样本的结果。生成器学习到的是鉴别器认同的数据的分布，如果从某个通常的隐空间（标准正态分布）冷启动，那么它学习的是分布变换的过程。
-
-Goodfellow, Ian J.; Pouget-Abadie, Jean; Mirza, Mehdi; Xu, Bing; Warde-Farley, David; Ozair, Sherjil; Courville, Aaron; B..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/11/02/GAN%E5%88%9D%E8%AF%86/">Read more</a></section></article><article class="post-item-card"><section class="content post-card-content p-4 pb-5"><header><a href="/tags/R"><i class="tag post-item-tag">R</i></a><a href="/tags/interpretable"><i class="tag post-item-tag">interpretable</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2021/10/18/muxViz-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">muxViz 使用指南</a></h2><time class="has-text-grey" datetime="2021-10-18T05:44:39.000Z">2021-10-18</time><p class="is-flex-grow-2 mt-2"> 安装
-
-安装R-studio、R
-muxViz-3.1（无GUI）：https://github.com/manlius/muxViz
-muxViz-2.0（GUI）：https://github.com/wjj0301/Multiplex-Networks
-
- 输入数据格式
-# config.txt
-
-path_multilayer; path_to_layers_info; path_to_layers_layout
-# 或者每层对应一个文件
-path_layer_X; label_layer_X; path_to_layout_layer_X
-...
-
-# layers.txt
-# 层信息
-
-layerID layerLabel
-1 L1
-2 L2
-3 L3
-...
-
-# .edges
-# 层内连边..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2021/10/18/muxViz-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/">Read more</a></section></article><section class="paginator is-flex is-justify-content-flex-end is-flex-wrap-wrap mt-5"><a class="extend prev" rel="prev" href="/archives/"><i class="iconfont icon-prev has-text-grey"></i></a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/"><i class="iconfont icon-next has-text-grey"></i></a></section></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container archives-widget is-in-archive-page"><h3>Archives</h3><section><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/12/">December 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">October 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a><span class="archive-list-count">2</span></li></ul></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
+..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/%E5%8C%97%E5%A4%A7%E8%82%96%E8%87%BB%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8/">Read more</a></section></article><article class="post-item-card"><header class="is-relative is-flex"><div class="post-cover-backdrop is-hidden"><img src="/2023/02/13/%E4%B8%AA%E4%BA%BA%E5%93%81%E7%89%8C%E7%9A%84%E5%BC%80%E5%A7%8B/images.png" alt="loading.."></div><a class="post-cover-link has-text-centered skeleton" href="/2023/02/13/%E4%B8%AA%E4%BA%BA%E5%93%81%E7%89%8C%E7%9A%84%E5%BC%80%E5%A7%8B/"><img class="post-cover-img js-img-fadeIn" src="/2023/02/13/%E4%B8%AA%E4%BA%BA%E5%93%81%E7%89%8C%E7%9A%84%E5%BC%80%E5%A7%8B/images.png" alt="loading.." data-backdrop="true"></a></header><section class="content post-card-content p-4 pb-5"><header><a href="/tags/life"><i class="tag post-item-tag">life</i></a></header><h2 class="mt-4 mb-0 is-family-serif"><a href="/2023/02/13/%E4%B8%AA%E4%BA%BA%E5%93%81%E7%89%8C%E7%9A%84%E5%BC%80%E5%A7%8B/">个人品牌的开始</a></h2><time class="has-text-grey" datetime="2023-02-13T05:36:25.478Z">2023-02-13</time><p class="is-flex-grow-2 mt-2"> 楔子
+昨天看曾仕强教授的演讲，讲了个三季人的故事。就是说孔子的学生和一个路人争辩一年到底有几个季节，路人坚决认为是三个季节，孔子学生说明明是四个季节，两人吵得不可开交，只好请孔子来决断。孔子看了路人一眼就对学生说，一年是三个季节，你朝他磕个头承认错误吧。孔子的学生满怀不甘地磕了头，路人也高高兴兴地走了。时候，学生埋怨孔子为什么不坚持真理，孔子说：“你看那个家伙，衣服是绿的，就是只蚂蚱，活不过这个秋天，在他眼里，一年就是三季，你怎么争都不会有结果，还不如磕个头让他高高兴兴地离开。”在网络喷子和“杠精”横行的当下，这个故事颇有启发意义。
+事实上人和人的差别比人和蚂蚱都要大，当今网络空间里的**“三季人”**我们见得太多了。逞口舌之快，开口就是祖宗十八代，自认为是龙吟虎啸，在别人眼里却不过是跳梁小丑。在他们的认..</p><a class="button is-default mt-2 has-text-weight-semibold" href="/2023/02/13/%E4%B8%AA%E4%BA%BA%E5%93%81%E7%89%8C%E7%9A%84%E5%BC%80%E5%A7%8B/">Read more</a></section></article><section class="paginator is-flex is-justify-content-flex-end is-flex-wrap-wrap mt-5"><a class="extend prev" rel="prev" href="/archives/"><i class="iconfont icon-prev has-text-grey"></i></a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/"><i class="iconfont icon-next has-text-grey"></i></a></section></section><aside class="column is-hidden-mobile is-4-tablet is-3-widescreen"><div style="position: sticky; top: 50px;"><main class="aside-card-container archives-widget is-in-archive-page"><h3>Archives</h3><section><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a><span class="archive-list-count">22</span></li></ul></section></main></div></aside></div></article><script>$claudia.fadeInImage(null, $claudia.blurBackdropImg)
 
 window.addEventListener('resize', $claudia.throttle(function () {
     var images = document.querySelectorAll('.js-img-fadeIn')

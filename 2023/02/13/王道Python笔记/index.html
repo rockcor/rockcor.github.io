@@ -1,0 +1,607 @@
+<!DOCTYPE html><html class="appearance-auto" lang="en"><head><meta charset="UTF-8"><title>王道Python笔记</title><meta name="description" content="Stay Acute."><meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, initial-scale=1"><!-- Google Analytics --><!-- End Google Analytics -->
+<!-- Baidu Analytics --><!-- End Baidu Analytics --><link rel="icon" href="/images/favicon.ico"><link rel="stylesheet" href="/style/common/bulma.css"><link rel="stylesheet" href="/style/base.css"><link rel="stylesheet" href="/style/common/helper.css"><script src="/js/common.js"></script><link rel="stylesheet" href="/style/post.css"><link rel="stylesheet" href="/style/themes/highlight-theme-light.css"><link rel="stylesheet" href="/style/common/jquery.fancybox.min.css"><script src="/js/highlight.pack.js"></script><meta name="description" content=" day2
+现在的服务器，硬件追求性价比，可靠性用软件保证
+系统级进程用数个无密码用户启动，互相独立
+#给root配置密码
+sudo passwd root
+
+useradd -m ... -s /bin/bash
+
+userdel -r
+
+ linux通配
+
+
+
+
+基本规则
+说明
+
+
+
+
+grep
+输出含匹配段的行，首尾规则
+! [] ^ $ * ?
+
+
+find/shell/rm等
+输出文件路径，无首尾规则，加-name，加引号
+! [] *(同.*) .
+
+
+
+ day4
+安装ipython3
+复数 complex(a,b) .real/imag
+命名规范：
+
+常量全大写，可加下划线
+变量、方法用下划线命名法
+类名用大驼峰命名法
+
+float类型17位精度
+1 and 3 =3 真则返回后一个
+5 o.."><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head><body class="is-flex is-flex-direction-column"><header class="header-widget is-flex-shrink-0 is-hidden-mobile"><div class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center is-full-height"><section class="is-hidden-mobile is-flex-shrink-0"><h2><a href="/">Rockcor's blog</a></h2></section><h3 class="is-hidden-mobile is-family-serif is-full-height is-flex is-align-items-center is-flex-shrink-0"><div class="is-full-height" id="postTopic"><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">王道Python笔记</p><p class="is-full-height is-flex-shrink-0 is-flex is-align-items-center is-justify-content-center">Click back to the top</p></div></h3><aside class="is-flex-shrink-0"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></aside></div></header><header class="is-flex header-widget is-flex-shrink-0 is-align-items-center is-justify-content-center is-hidden-tablet"><h3 class="is-inline-block"><a href="/">Home</a></h3><h3 class="is-inline-block"><a href="/about">About</a></h3><h3 class="is-inline-block"><a href="/archives">Archives</a></h3></header><main><main class="container is-max-widescreen content section post-page pt-4 px-4"><div class="columns is-flex-desktop is-justify-content-center is-flex-direction-row-reverse"><div class="column is-3 is-hidden-mobile"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#day2"><span class="toc-text"> day2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#linux%E9%80%9A%E9%85%8D"><span class="toc-text"> linux通配</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day4"><span class="toc-text"> day4</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text"> 变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-text"> 全局变量和局部变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E5%A4%A7%E5%8F%AF%E5%8F%98%E7%B1%BB%E5%9E%8B"><span class="toc-text"> 三大可变类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-text"> 列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E5%85%B8"><span class="toc-text"> 字典</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA"><span class="toc-text"> 格式化输出</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9B%86%E5%90%88"><span class="toc-text"> 集合</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day8"><span class="toc-text"> day8</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text"> 字符串</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day9"><span class="toc-text"> day9</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day10"><span class="toc-text"> day10</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day11"><span class="toc-text"> day11</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day14"><span class="toc-text"> day14</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day15"><span class="toc-text"> day15</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day16"><span class="toc-text"> day16</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day18"><span class="toc-text"> day18</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day19"><span class="toc-text"> day19</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day20"><span class="toc-text"> day20</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day22"><span class="toc-text"> day22</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day23"><span class="toc-text"> day23</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day25"><span class="toc-text"> day25</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day26"><span class="toc-text"> day26</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day27"><span class="toc-text"> day27</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day32"><span class="toc-text"> day32</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text"> 数据分析常用方法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E6%96%B9%E6%B3%95"><span class="toc-text"> 高级方法：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day33"><span class="toc-text"> day33</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ipython%E9%AD%94%E6%B3%95%E5%91%BD%E4%BB%A4"><span class="toc-text"> ipython魔法命令：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#matplotlib%E8%B8%A9%E5%9D%91"><span class="toc-text"> matplotlib踩坑</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day37"><span class="toc-text"> day37</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#chrome-%E9%80%80%E5%87%BActrllk%E5%90%8E%E5%9C%B0%E5%9D%80%E6%A0%8F%E7%9A%84%E9%80%89%E4%B8%AD%E7%8A%B6%E6%80%81"><span class="toc-text"> chrome 退出ctrl+l&#x2F;k后地址栏的选中状态</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day46"><span class="toc-text"> day46</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day49"><span class="toc-text"> day49</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-text"> 卷积神经网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#modelcheckpoint"><span class="toc-text"> modelcheckpoint</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#others"><span class="toc-text"> others</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day50"><span class="toc-text"> day50</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#plot_model"><span class="toc-text"> plot_model</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rnn"><span class="toc-text"> RNN</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day55"><span class="toc-text"> day55</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day56"><span class="toc-text"> day56</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day58"><span class="toc-text"> day58</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#hadoopyarn-%E6%9E%B6%E6%9E%84"><span class="toc-text"> hadoop&#x2F;YARN 架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hadoop%E5%90%AF%E5%8A%A8"><span class="toc-text"> hadoop启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hive%E5%90%AF%E5%8A%A8"><span class="toc-text"> hive启动</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day68"><span class="toc-text"> day68</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day72"><span class="toc-text"> day72</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#bounces-in-wangdao"><span class="toc-text"> bounces in wangdao</span></a></li></ol></div><div class="column is-9"><header class="my-4"><a href="/tags/python"><i class="tag post-item-tag">python</i></a></header><h1 class="mt-0 mb-1 is-family-serif" id="postTitle">王道Python笔记</h1><time class="has-text-grey" datetime="2023-02-13T05:36:25.499Z">2023-02-13</time><article class="mt-2 post-content"><h1 id="day2"><a class="markdownIt-Anchor" href="#day2"></a> day2</h1>
+<p>现在的服务器，硬件追求性价比，可靠性用软件保证</p>
+<p>系统级进程用数个无密码用户启动，互相独立</p>
+<pre class="highlight"><code class="shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">给root配置密码</span>
+sudo passwd root
+
+useradd -m ... -s /bin/bash
+
+userdel -r
+</code></pre>
+<h2 id="linux通配"><a class="markdownIt-Anchor" href="#linux通配"></a> linux通配</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>基本规则</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>grep</td>
+<td>输出含匹配段的行，首尾规则</td>
+<td>! [] ^ $ * ?</td>
+</tr>
+<tr>
+<td>find/shell/rm等</td>
+<td>输出文件路径，无首尾规则，加-name，加引号</td>
+<td>! [] *(同.*) .</td>
+</tr>
+</tbody>
+</table>
+<h1 id="day4"><a class="markdownIt-Anchor" href="#day4"></a> day4</h1>
+<p>安装ipython3</p>
+<p>复数 complex(a,b) .real/imag</p>
+<p>命名规范：</p>
+<ul>
+<li>常量全大写，可加下划线</li>
+<li>变量、方法用下划线命名法</li>
+<li>类名用大驼峰命名法</li>
+</ul>
+<p>float类型17位精度</p>
+<p>1 and 3 =3 真则返回后一个</p>
+<p>5 or 0 =5 真则返回前一个</p>
+<p>~x = -x-1</p>
+<p>位操作去重</p>
+<p>并查集、位操作看文献耦合</p>
+<h2 id="变量"><a class="markdownIt-Anchor" href="#变量"></a> 变量</h2>
+<p>一切变量都是引用</p>
+<p>变量中记录数据的地址，使用id()可以查看</p>
+<p>修改变量值的时候，改变这个地址</p>
+<p>函数传递时，赋值没法改变函数外的值，只有通过可变类型（list|dict|set）</p>
+<p>0-255固定地址（数字表）</p>
+<h3 id="全局变量和局部变量"><a class="markdownIt-Anchor" href="#全局变量和局部变量"></a> 全局变量和局部变量</h3>
+<p>变量在函数内被使用，就近原则</p>
+<p>变量在函数内被赋值，则认为是局部变量</p>
+<p>函数内修改一个全局变量时，必须加global</p>
+<h3 id="三大可变类型"><a class="markdownIt-Anchor" href="#三大可变类型"></a> 三大可变类型</h3>
+<h4 id="列表"><a class="markdownIt-Anchor" href="#列表"></a> 列表</h4>
+<p>append、pop(按位删除一次)或del a[i]、remove(按值删除)、count、insert、extend(列表追加)、reverse、sort(reverse=True)归并排序、A.index(按值查下标)</p>
+<p>函数内改变函数外，取下标赋值</p>
+<h4 id="字典"><a class="markdownIt-Anchor" href="#字典"></a> 字典</h4>
+<p>hash实现</p>
+<p>dict1=dict{}</p>
+<p>key必须是不可变类型，一般放字符串</p>
+<p>dic.get(key)比dic[]更安全</p>
+<p>keys|values|items</p>
+<p>setdefault(key,value) 如key不存在，修改value</p>
+<p>update 覆盖已存在key的value，添加不存在key，实现合并。python 3.9支持加号</p>
+<h5 id="格式化输出"><a class="markdownIt-Anchor" href="#格式化输出"></a> 格式化输出</h5>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">for</span> k <span class="hljs-keyword">in</span> xiaoming:<span class="hljs-comment"># 等于for k in xiaoming.keys()</span>
+	<span class="hljs-built_in">print</span>(%s:%s % (k, xiaoming[k]))
+</code></pre>
+<h4 id="集合"><a class="markdownIt-Anchor" href="#集合"></a> 集合</h4>
+<p>set1=set()</p>
+<p>add、clear、copy</p>
+<p>x.union不改变x，x.update改变x</p>
+<p>a|b  a-b a&amp;b a^b</p>
+<h1 id="day8"><a class="markdownIt-Anchor" href="#day8"></a> day8</h1>
+<ul>
+<li>没有return的函数，返回None</li>
+</ul>
+<h2 id="字符串"><a class="markdownIt-Anchor" href="#字符串"></a> 字符串</h2>
+<ol>
+<li>
+<p>逆序：str[::-1]</p>
+</li>
+<li>
+<p>list(str) 相当于 split(‘’)，然后用’'.join(list)恢复；字符串切分、读取类似列表，list(str)将其转化成单字符列表</p>
+</li>
+</ol>
+<h1 id="day9"><a class="markdownIt-Anchor" href="#day9"></a> day9</h1>
+<ul>
+<li>lis.extend()等价于lis+=… 不改变ID，函数外也会改变</li>
+</ul>
+<h1 id="day10"><a class="markdownIt-Anchor" href="#day10"></a> day10</h1>
+<ol>
+<li>
+<p>dir(Class)看类的方法和属性</p>
+<p>dir(Object)看对象属性和方法</p>
+</li>
+<li>
+<p>直接打印对象时显示__str__的返回值，__repr__更高级</p>
+</li>
+</ol>
+<h1 id="day11"><a class="markdownIt-Anchor" href="#day11"></a> day11</h1>
+<ol>
+<li>
+<p>面向对象的思想：实现任何需求，都创建一个对象，让对象去做</p>
+</li>
+<li>
+<p>file.seek()在非二进制模式下只能向后偏移</p>
+</li>
+</ol>
+<p>二进制模式写入需要转为字节流：</p>
+<ul>
+<li>
+<p>字符串：str.encode(‘utf8’)</p>
+</li>
+<li>
+<p>整型数：struct.pack(‘i’,123)</p>
+</li>
+</ul>
+<ol start="3">
+<li>
+<p>eval(字符串)-&gt;列表、字典</p>
+<p>eval(‘命令’) 直接执行，danger，尤其在接收网络内容时!!</p>
+</li>
+</ol>
+<h1 id="day14"><a class="markdownIt-Anchor" href="#day14"></a> day14</h1>
+<ol>
+<li>python链表</li>
+</ol>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Node</span>:
+	<span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self,ele</span>):
+		self.ele=ele
+		self.<span class="hljs-built_in">next</span>=<span class="hljs-literal">None</span>
+</code></pre>
+<ol start="2">
+<li>
+<p>堆排序是空间复杂度O（1）的最好排序算法</p>
+</li>
+<li>
+<p>计数排序 时间复杂度最低</p>
+</li>
+<li>
+<p>传递方法时只传方法名字，参数用*args传递</p>
+</li>
+<li>
+<p>用小根堆找第K大元素</p>
+</li>
+</ol>
+<h1 id="day15"><a class="markdownIt-Anchor" href="#day15"></a> day15</h1>
+<ul>
+<li>python对整形数移位操作时，该数为无符号数</li>
+</ul>
+<h1 id="day16"><a class="markdownIt-Anchor" href="#day16"></a> day16</h1>
+<ul>
+<li>
+<p>ping 使用icmp协议实现的</p>
+</li>
+<li>
+<p>tcp 报文头中有滑动窗口大小</p>
+</li>
+<li>
+<p>tcp头长20，udp头长8  udp效率高，且适用于无线</p>
+</li>
+</ul>
+<h1 id="day18"><a class="markdownIt-Anchor" href="#day18"></a> day18</h1>
+<ul>
+<li>
+<p>UDP 的特点： 尽最大努力交付，发送大于接收，接收方直接丢弃，可以多个端口使用同一个描述符和缓冲区，一对多</p>
+</li>
+<li>
+<p>python中TCP在accept成功后会返回套接字和客户端ip，端口元组</p>
+<p>UDP在每次recvfrom时得到发送者的内容和ip，端口元组</p>
+</li>
+<li>
+<p>暂停态(T)用于程序调试</p>
+</li>
+<li>
+<p>nohup 后台运行，jobs查看，fg到前台，bg到后台</p>
+</li>
+<li>
+<p>socket发送和接收整型数</p>
+<pre class="highlight"><code class="python"><span class="hljs-comment">#发送端</span>
+socket.send(struct.pack(<span class="hljs-string">'I'</span>,<span class="hljs-number">123</span>))
+
+<span class="hljs-comment">#接收端</span>
+recv_data=socket.recv(<span class="hljs-number">4</span>)
+data=struct.unpack(<span class="hljs-string">'I'</span>,recv_data)[<span class="hljs-number">0</span>]
+</code></pre>
+</li>
+</ul>
+<h1 id="day19"><a class="markdownIt-Anchor" href="#day19"></a> day19</h1>
+<ol>
+<li>
+<p>时间片轮转:</p>
+<p>一轮调度周期内把时间分割为若干个时间片，调度器将时间片分配给就绪队列的进程</p>
+</li>
+<li>
+<p>killall/pkill 按名字杀进程</p>
+</li>
+<li>
+<p>crontab -e 设置定时任务</p>
+</li>
+<li>
+<p>子进程创建的一瞬间是父进程的克隆</p>
+</li>
+<li>
+<p>python特色：主线程执行结束前，会等待子线程结束，join用于子线程之间的等待，不写join子线程也会执行到底，因为主线程一直在；C中子线程随着主线程的消亡而消亡，必须要join()</p>
+</li>
+<li>
+<p>join移到了进程里并取代了wait</p>
+</li>
+<li>
+<p>thread类，从run函数进入其他方法</p>
+</li>
+</ol>
+<h1 id="day20"><a class="markdownIt-Anchor" href="#day20"></a> day20</h1>
+<ol>
+<li>
+<p>当一个函数有yield 时，他就是一个生成器</p>
+</li>
+<li>
+<p>线程切换比较耗时，操作系统会给每个线程分配cache；每一个协程仅保存压栈寄存器状态，切换时不用进入内核态</p>
+</li>
+<li>
+<p>next(g)，第一次从开头运行到yield，返回yield</p>
+</li>
+</ol>
+<p>后面每一次从yield传参运行到下一个yield传参之前</p>
+<p>正则表达式：</p>
+<table>
+<thead>
+<tr>
+<th>匹配个数</th>
+<th>贪婪</th>
+<th>非贪婪</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1+</td>
+<td>.+</td>
+<td>.+?</td>
+</tr>
+<tr>
+<td>任意</td>
+<td>.*</td>
+<td>.*?返回空</td>
+</tr>
+<tr>
+<td>0/1</td>
+<td>.{0,1}或.?</td>
+<td>.*?</td>
+</tr>
+<tr>
+<td>1</td>
+<td>.{1}或.</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<p><strong>可以匹配0个的会给$^以及单一匹配让步</strong></p>
+<h1 id="day22"><a class="markdownIt-Anchor" href="#day22"></a> day22</h1>
+<ol>
+<li>
+<p>从模块导入全局变量</p>
+<p>import common: 共享</p>
+<p>from common import GVAR：只共享可变类型</p>
+</li>
+<li>
+<p>工厂模式：用工厂的create方法，根据传入的字符串的不同，创建不同的类的对象</p>
+</li>
+</ol>
+<h1 id="day23"><a class="markdownIt-Anchor" href="#day23"></a> day23</h1>
+<ol>
+<li>
+<p>assert 为假，抛出断言异常，相当于if+raise</p>
+</li>
+<li>
+<p>dir(类名)看所有类属性和方法，__dict__用于打印类属性方法/对象所有属性和方法</p>
+</li>
+<li>
+<p>__getitem__ 让对象以方括号形式访问</p>
+</li>
+<li>
+<p>mysql 数据类型</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xrq730/p/8446246.html">https://www.cnblogs.com/xrq730/p/8446246.html</a></p>
+<p>char 和 varchar</p>
+<p>对于MyISAM表，推荐CHAR类型；对于InnoDB表，推荐VARCHAR类型</p>
+</li>
+</ol>
+<h1 id="day25"><a class="markdownIt-Anchor" href="#day25"></a> day25</h1>
+<pre class="highlight"><code class="sql"><span class="hljs-keyword">UPDATE</span> tablename <span class="hljs-keyword">SET</span> ...<span class="hljs-operator">=</span>... <span class="hljs-keyword">WHERE</span> ...
+
+<span class="hljs-comment">-- sql注入</span>
+<span class="hljs-keyword">where</span> id<span class="hljs-operator">=</span><span class="hljs-number">1</span> <span class="hljs-keyword">or</span> <span class="hljs-number">1</span><span class="hljs-operator">=</span><span class="hljs-number">1</span>
+<span class="hljs-comment">--拿到整个数据库</span>
+
+<span class="hljs-comment">-- 解决方法：传参</span>
+para<span class="hljs-operator">=</span>[findname]
+</code></pre>
+<h1 id="day26"><a class="markdownIt-Anchor" href="#day26"></a> day26</h1>
+<ol>
+<li>
+<p>主键默认有索引，并且是唯一索引</p>
+</li>
+<li>
+<p>只能在一个表中某一列存在聚集索引，索引值和行数据存储在一起</p>
+</li>
+<li>
+<p>一定要有公网ip才能被任意机器ping通，ping通才能主动发起对被ping通方的连接</p>
+</li>
+<li>
+<p>隔离等级</p>
+<pre class="highlight"><code class="sql"><span class="hljs-comment">-- 查看</span>
+<span class="hljs-keyword">select</span> @<span class="hljs-variable">@tx</span>_isolation
+<span class="hljs-keyword">select</span> @<span class="hljs-variable">@global</span>.tx_isolation
+<span class="hljs-comment">-- 修改</span>
+<span class="hljs-keyword">set</span> session transaction isolation level ...
+<span class="hljs-comment">-- read uncommitted</span>
+<span class="hljs-comment">-- read committed</span>
+<span class="hljs-comment">-- repeatable read(default)</span>
+<span class="hljs-comment">-- serializable</span>
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://elsef.com/2018/11/28/%E7%BB%8F%E5%B8%B8%E8%A2%AB%E8%AF%AF%E8%A7%A3%E7%9A%84MySQL%E4%B8%AD%E5%AF%B9REPEATABLE-READ/">幻读的详细解释</a></p>
+</li>
+<li>
+<p>配置主从同步mariadb 10和mysql的区别：</p>
+<ol>
+<li>配置文件在/etc/my.cnf</li>
+<li><code>systemctl restart mariadb</code></li>
+</ol>
+</li>
+<li>
+<p>source 和备份恢复都可以导入sql文件，出现<code>utf8mb4_0900_ai_ci</code>编码错误来源于注释掉的行，比较坑爹</p>
+</li>
+<li>
+<p>回调函数：作为参数传入另一个函数的函数，延迟调用，C语言中用函数指针实现</p>
+</li>
+<li>
+<p>主键创建时默认是聚集索引</p>
+</li>
+<li>
+<p>唯一索引可以为null</p>
+</li>
+</ol>
+<h1 id="day27"><a class="markdownIt-Anchor" href="#day27"></a> day27</h1>
+<ol>
+<li>闭包：函数里定义的函数，在调用时根据传入参数返回一个新函数</li>
+<li>闭包消耗的资源比对象少，能传递功能和数据</li>
+<li>闭包里的nonloal不释放局部变量，类似于静态局部变量的性质</li>
+<li>使用闭包相当于重写一个函数</li>
+<li>装饰器使用闭包技术，对原来的函数进行了扩展。装饰器需要传参用两层闭包</li>
+<li>离函数更近的装饰器先装饰，后调用</li>
+</ol>
+<h1 id="day32"><a class="markdownIt-Anchor" href="#day32"></a> day32</h1>
+<h2 id="数据分析常用方法"><a class="markdownIt-Anchor" href="#数据分析常用方法"></a> 数据分析常用方法：</h2>
+<ol>
+<li>对比分析</li>
+<li>多维拆解</li>
+<li>留存分析</li>
+<li>漏斗分析：目的明确</li>
+</ol>
+<h2 id="高级方法"><a class="markdownIt-Anchor" href="#高级方法"></a> 高级方法：</h2>
+<ol>
+<li>用户画像</li>
+<li>归因查找：末次归因、递减归因、首次归因</li>
+<li>路径挖掘：起点明确</li>
+<li>行为序列：单个用户的操作记录</li>
+</ol>
+<h1 id="day33"><a class="markdownIt-Anchor" href="#day33"></a> day33</h1>
+<h2 id="ipython魔法命令"><a class="markdownIt-Anchor" href="#ipython魔法命令"></a> ipython魔法命令：</h2>
+<table>
+<thead>
+<tr>
+<th>魔法命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%pwd|%cd|%ls</td>
+<td>同shell</td>
+</tr>
+<tr>
+<td>%writefile</td>
+<td>写入文件</td>
+</tr>
+<tr>
+<td>%run  .py/.ipynb</td>
+<td>运行脚本</td>
+</tr>
+<tr>
+<td>%whos|%reset</td>
+<td>查看/清除当前变量</td>
+</tr>
+<tr>
+<td>%timeit</td>
+<td>测试单行代码运行时间</td>
+</tr>
+</tbody>
+</table>
+<h2 id="matplotlib踩坑"><a class="markdownIt-Anchor" href="#matplotlib踩坑"></a> matplotlib踩坑</h2>
+<ol>
+<li>
+<p>动态修改中文</p>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">from</span> matplotlib <span class="hljs-keyword">import</span> font_manager
+
+<span class="hljs-comment"># linux</span>
+myfont = font_manager.FontProperties(fname=<span class="hljs-string">'/usr/share/fonts/ttf/???.ttf'</span>，size=<span class="hljs-number">15</span>) 
+
+<span class="hljs-comment"># windows</span>
+my_font = font_manager.FontProperties(fname=<span class="hljs-string">'C:\Windows\Fonts\???.ttf'</span>,size=<span class="hljs-number">15</span>) 
+
+mpl.rcParams[<span class="hljs-string">'axes.unicode_minus'</span>] = <span class="hljs-literal">False</span>  
+<span class="hljs-comment"># 后面需要显示中文的地方加参数</span>
+fontsproperties=myfont
+
+<span class="hljs-comment"># 特别的，legend()后面的参数用proc</span>
+proc=myfont
+</code></pre>
+</li>
+<li>
+<p>全局修改中文</p>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">from</span> matplotlib <span class="hljs-keyword">import</span> pyplot <span class="hljs-keyword">as</span> plt 
+plt.rcParams[<span class="hljs-string">'font.sans-serif'</span>]=[<span class="hljs-string">'SimHei'</span>] <span class="hljs-comment">#用来正常显示中文标签</span>
+plt.rcParams[<span class="hljs-string">'axes.unicode_minus'</span>]=<span class="hljs-literal">False</span> <span class="hljs-comment">#用来正常显示负号</span>
+</code></pre>
+</li>
+</ol>
+<h1 id="day37"><a class="markdownIt-Anchor" href="#day37"></a> day37</h1>
+<h2 id="chrome-退出ctrllk后地址栏的选中状态"><a class="markdownIt-Anchor" href="#chrome-退出ctrllk后地址栏的选中状态"></a> chrome 退出<code>ctrl+l/k</code>后地址栏的选中状态</h2>
+<p><code>Esc</code>不行，谷歌工程师脑子进水了，只能<code>Tab</code>。</p>
+<h1 id="day46"><a class="markdownIt-Anchor" href="#day46"></a> day46</h1>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">from</span> tensorflow <span class="hljs-keyword">import</span> keras
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">WideDeepModel</span>(keras.models.Model):
+	<span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):
+	<span class="hljs-comment"># 继承父类</span>
+	<span class="hljs-built_in">super</span>().__init__()
+    self.hidden1_layer = keras.layers.Dense(<span class="hljs-number">30</span>, activation=<span class="hljs-string">'relu'</span>)
+    self.hidden2_layer = keras.layers.Dense(<span class="hljs-number">30</span>, activation=<span class="hljs-string">'relu'</span>)
+    self.output_layer1 = keras.layers.Dense(<span class="hljs-number">1</span>)
+    self.output_layer2 = keras.layers.Dense(<span class="hljs-number">1</span>)
+   
+  
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">call</span>(<span class="hljs-params">self,inputs</span>):
+    <span class="hljs-comment"># 定义正向计算，输入张量和输出张量</span>
+    input_wide=inputs[<span class="hljs-number">0</span>]
+    input_deep=inputs[<span class="hljs-number">1</span>]
+    hidden1=self.hidden1_layer(input_deep)
+    hidden2=self.hidden2_layer(hidden1)
+    concat=keras.layers.concatenate([input_wide,hidden2])
+    output1=self.output_layer1(concat)
+    output2=self.output_layer2(hidden2)
+    <span class="hljs-keyword">return</span> [output1,output2]
+
+model=WideDeepModel()
+<span class="hljs-comment"># 两个输入层的维度</span>
+model.build(input_shape=[(<span class="hljs-literal">None</span>,<span class="hljs-number">5</span>),(<span class="hljs-literal">None</span>,<span class="hljs-number">6</span>)])
+model.<span class="hljs-built_in">compile</span>(loss=<span class="hljs-string">"mean_squared_error"</span>,
+              optimizer = keras.optimizers.SGD(<span class="hljs-number">0.001</span>))
+
+callbacks = [keras.callbacks.EarlyStopping(
+    patience=<span class="hljs-number">5</span>, min_delta=<span class="hljs-number">1e-2</span>)]
+
+history = model.fit([x_train_scaled_wide, x_train_scaled_deep],									[y_train,y_train],
+                    validation_data =([x_valid_scaled_wide, 									x_valid_scaled_deep],[y_valid,y_valid]),
+                    epochs = <span class="hljs-number">100</span>,
+                    callbacks = callbacks)
+</code></pre>
+<h1 id="day49"><a class="markdownIt-Anchor" href="#day49"></a> day49</h1>
+<h2 id="卷积神经网络"><a class="markdownIt-Anchor" href="#卷积神经网络"></a> 卷积神经网络</h2>
+<p>每一层的参数计算：上层通道数*卷积核大小*本层通道数 +本层通道数</p>
+<h2 id="modelcheckpoint"><a class="markdownIt-Anchor" href="#modelcheckpoint"></a> modelcheckpoint</h2>
+<p>保存之前的最佳模型，再次训练时会在之前的参数上继续训练</p>
+<h2 id="others"><a class="markdownIt-Anchor" href="#others"></a> others</h2>
+<ol>
+<li>selu比relu收敛更快</li>
+<li>卷积和池化都能减少过拟合</li>
+</ol>
+<h1 id="day50"><a class="markdownIt-Anchor" href="#day50"></a> day50</h1>
+<h2 id="plot_model"><a class="markdownIt-Anchor" href="#plot_model"></a> plot_model</h2>
+<pre class="highlight"><code class="python"><span class="hljs-keyword">from</span> tensorflow.keras.utils <span class="hljs-keyword">import</span> plot_modelplot_model(single_rnn_model)
+</code></pre>
+<h2 id="rnn"><a class="markdownIt-Anchor" href="#rnn"></a> RNN</h2>
+<p>根据上下文预测</p>
+<p>保存权重而不是模型，可以改变传入批次的大小</p>
+<h1 id="day55"><a class="markdownIt-Anchor" href="#day55"></a> day55</h1>
+<p>白化：</p>
+<ol>
+<li>PCA白化 均值为0,方差为1</li>
+<li>ZCA白化 均值为0,方差相同</li>
+</ol>
+<p>批归一化：对各维度分别 均值为0,方差为1，再添加缩放和偏移保留部分数据分布特征</p>
+<h1 id="day56"><a class="markdownIt-Anchor" href="#day56"></a> day56</h1>
+<p>route -n 看网关</p>
+<p>lsof -i:端口号</p>
+<h1 id="day58"><a class="markdownIt-Anchor" href="#day58"></a> day58</h1>
+<h2 id="hadoopyarn-架构"><a class="markdownIt-Anchor" href="#hadoopyarn-架构"></a> hadoop/YARN 架构</h2>
+<p>mapreduce的调度计算分给resourceManager，本身只负责数据统计计算</p>
+<ol>
+<li>
+<p>client 按128M/块分割好的数据存储到datanode(默认3份)，namenode放元数据（类似于Linux目录结构体信息）</p>
+</li>
+<li>
+<p>client 向resourceManager提交jobs</p>
+</li>
+<li>
+<p>主机的resourceManager和nodeManage协商，jobs分解为tasks，初始化container，分发管家applicationMaster给container，管家申请资源，注册进程</p>
+</li>
+<li>
+<p>applicationMaster向nodeManager申请启动，把task给container</p>
+</li>
+<li>
+<p>task执行完毕，向管家报告，管家请求kill</p>
+</li>
+<li>
+<p>namenode定期汇报datanode；nodemanager定期汇报container</p>
+</li>
+</ol>
+<h2 id="hadoop启动"><a class="markdownIt-Anchor" href="#hadoop启动"></a> hadoop启动</h2>
+<pre class="highlight"><code class="shell">./start-all.sh
+</code></pre>
+<h2 id="hive启动"><a class="markdownIt-Anchor" href="#hive启动"></a> hive启动</h2>
+<pre class="highlight"><code class="shell">service docker startdocker start mysqlhive --service matestore &amp;hive
+</code></pre>
+<h1 id="day68"><a class="markdownIt-Anchor" href="#day68"></a> day68</h1>
+<p>grpc：远程过程调用，客户端直接调用服务端的函数</p>
+<h1 id="day72"><a class="markdownIt-Anchor" href="#day72"></a> day72</h1>
+<ol>
+<li>
+<p>在django model 层设置外键，mysql 的外键db_constraint设为false以提高效率</p>
+</li>
+<li>
+<p>先用一对一，扩展为一对多很方便</p>
+</li>
+</ol>
+<h1 id="bounces-in-wangdao"><a class="markdownIt-Anchor" href="#bounces-in-wangdao"></a> bounces in wangdao</h1>
+<ul>
+<li>
+<p>[x] 红黑树完整代码</p>
+</li>
+<li>
+<p>[ ] 图神经网络</p>
+</li>
+<li>
+<p>[ ] 网络科学导论</p>
+</li>
+<li>
+<p>[ ] 统计学习方法</p>
+</li>
+</ul>
+</article><section class="jump-container is-flex is-justify-content-space-between my-6"><!-- em is empty placeholder--><a class="button is-default" href="/2023/02/13/%E7%BD%91%E7%BB%9C%E6%8C%96%E6%8E%98%E5%9F%BA%E7%A1%80/" title="网络挖掘基础"><i class="iconfont icon-prev mr-2 has-text-grey"></i><span class="has-text-weight-semibold">Previous: 网络挖掘基础</span></a><a class="button is-default" href="/2023/02/13/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E6%BC%8F%E6%B4%9E%E7%BB%BC%E8%BF%B0/" title="智能合约漏洞综述"><span class="has-text-weight-semibold">Next: 智能合约漏洞综述</span><i class="iconfont icon-next ml-2 has-text-grey"></i></a></section><article class="mt-6 comment-container"><script async repo="rockcor/blog-comment" src="https://utteranc.es/client.js" issue-term="pathname" theme="preferred-color-scheme"></script></article></div></div></main></main><footer class="is-flex is-flex-direction-column is-align-items-center is-flex-shrink-0 is-family-serif"><section class="sns-container"><!-- Github--><a title="github" target="_blank" rel="noopener nofollow" href="//github.com/rockcor"><i class="iconfont icon-github"></i></a><!-- Ins--><!-- RSS--><!-- 知乎--><!-- 领英--><!-- 脸书--></section><p><span>Copyright ©</span><span> Rockcor 2024</span></p><div class="is-flex is-justify-content-center is-flex-wrap-wrap"><p>Powered by Hexo &verbar;&nbsp;</p><p class="is-flex is-justify-content-center"><a title="Hexo theme author" target="_blank" rel="noopener" href="//github.com/haojen">Theme by Haojen&nbsp;</a></p><div style="margin-top: 2px"><a class="github-button" title="github-button" target="_blank" rel="noopener" href="https://github.com/haojen/hexo-theme-Claudia" data-color-scheme="no-preference: light; light: light; dark: dark;" data-show-count="true"></a></div></div><div><span></span></div></footer><script async defer src="https://buttons.github.io/buttons.js"></script><script src="/js/jquery-3.6.1.min.js"></script><script src="/js/jquery-fancybox.min.js"></script><script src="/js/img_zoom.js"></script><script src="/js/post.js"></script></body></html>
